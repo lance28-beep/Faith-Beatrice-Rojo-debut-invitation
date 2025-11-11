@@ -209,15 +209,6 @@ export function Entourage() {
           <div className="absolute inset-2 sm:inset-3 md:inset-4 border border-[#F1EDE2] rounded-lg sm:rounded-xl pointer-events-none" />
           {/* Card content */}
           <div className="relative p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
-            {/* Global font import for Anton and category label class */}
-            <style jsx global>{`
-              @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-              .anton-regular {
-                font-family: "Anton", sans-serif;
-                font-weight: 400;
-                font-style: normal;
-              }
-            `}</style>
             {isLoading ? (
               <div className="flex items-center justify-center py-24">
                 <div className="flex flex-col items-center gap-4">

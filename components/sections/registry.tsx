@@ -32,27 +32,43 @@ export function Registry() {
             <div className="flex flex-col items-center space-y-6 sm:space-y-8">
               {/* Header with hearts */}
               <div className="flex items-center justify-center gap-2 sm:gap-3">
-                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-[#C3A161]" />
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#0A3428] text-center">
+                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-[#BB8A3D]" />
+                <h3 className="anton-regular text-base sm:text-lg md:text-xl lg:text-2xl font-bold uppercase text-[#BB8A3D] text-center tracking-[0.15em]">
                   Your Presence Is the Gift
                 </h3>
-                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-[#C3A161]" />
+                <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-[#BB8A3D]" />
               </div>
               
-              {/* Main message */}
-              <div className="text-center space-y-4 sm:space-y-5 max-w-2xl">
-                <p className="text-base sm:text-lg md:text-xl font-medium text-[#0A3428] leading-relaxed">
-                  Thank you for being part of our love story.
-                </p>
-                <p className="text-sm sm:text-base md:text-lg text-[#0A3428]/80 font-sans leading-relaxed">
-                  If you feel inclined to give a monetary gift, we would appreciate receiving it in person so we may share our heartfelt thanks face-to-face.
-                </p>
+              {/* Main message - Poetic verse */}
+              <div className="text-center space-y-2 sm:space-y-3 max-w-2xl px-2 sm:px-4">
+                <div className="relative py-4 sm:py-6">
+                  {/* Decorative top border */}
+                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-[#BB8A3D]/50 to-transparent"></div>
+                  
+                  <div className="space-y-2 sm:space-y-3">
+                    <p className="anton-regular text-base sm:text-lg md:text-xl lg:text-2xl text-[#0A3428] leading-relaxed">
+                      With all that we have, we are truly blessed.
+                    </p>
+                    <p className="anton-regular text-base sm:text-lg md:text-xl lg:text-2xl text-[#0A3428] leading-relaxed">
+                      Your presence and prayers are what we request.
+                    </p>
+                    <p className="anton-regular text-base sm:text-lg md:text-xl lg:text-2xl text-[#0A3428] leading-relaxed pt-1 sm:pt-2">
+                      But if you desire to give nonetheless,
+                    </p>
+                    <p className="anton-regular text-base sm:text-lg md:text-xl lg:text-2xl text-[#0A3428] leading-relaxed">
+                      monetary gift is the one we suggest.
+                    </p>
+                  </div>
+                  
+                  {/* Decorative bottom border */}
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-[#BB8A3D]/50 to-transparent"></div>
+                </div>
               </div>
               
               {/* Toggle Button */}
               <button
                 onClick={() => setShowQRCode(!showQRCode)}
-                className="flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-[#0A3428] to-[#106552] hover:from-[#106552] hover:to-[#0A3428] text-white rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl group"
+                className="flex items-center justify-center gap-2 px-6 py-3 sm:px-8 sm:py-3.5 bg-gradient-to-r from-[#0A3428] to-[#106552] hover:from-[#106552] hover:to-[#0A3428] text-white rounded-lg sm:rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl group mt-2"
                 aria-label={showQRCode ? "Hide QR Code" : "Show QR Code"}
               >
                 <span>{showQRCode ? "Hide" : "Show"} GCash QR Code</span>
@@ -65,25 +81,28 @@ export function Registry() {
               
               {/* QR Code Section - Animated */}
               <div
-                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                className={`overflow-hidden transition-all duration-700 ease-in-out ${
                   showQRCode
-                    ? "max-h-[800px] opacity-100"
+                    ? "max-h-[900px] opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <div className="flex flex-col items-center space-y-5 sm:space-y-6 pt-4 sm:pt-6">
+                <div className="flex flex-col items-center space-y-5 sm:space-y-6 pt-6 sm:pt-8">
+                  {/* Decorative divider */}
+                  <div className="w-20 sm:w-32 h-px bg-gradient-to-r from-transparent via-[#BB8A3D]/40 to-transparent"></div>
+                  
                   {/* GCash Label */}
-                  <div className="text-center">
-                    <h4 className="text-lg sm:text-xl md:text-2xl font-serif font-bold text-[#0A3428] mb-2">
+                  <div className="text-center space-y-1">
+                    <h4 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#0A3428] mb-1">
                       GCash
                     </h4>
-                    <p className="text-xs sm:text-sm text-[#0A3428]/70 font-sans">
+                    <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/70 font-sans">
                       Scan to send your gift
                     </p>
                   </div>
                   
                   {/* QR Code Image */}
-                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-lg border-2 border-[#C3A161]/30 hover:border-[#C3A161]/50 transition-all duration-300 hover:shadow-xl group">
+                  <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 shadow-xl border-2 border-[#C3A161]/40 hover:border-[#C3A161]/60 transition-all duration-500 hover:shadow-2xl group">
                     <Image
                       src="/QR/GCASH.png"
                       alt="GCash QR Code - Scan to send monetary gift"
@@ -92,16 +111,18 @@ export function Registry() {
                       sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 288px"
                       priority
                     />
+                    {/* Subtle glow effect */}
+                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl bg-gradient-to-br from-[#C3A161]/0 via-[#C3A161]/5 to-[#C3A161]/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
                   
                   {/* Instructions */}
-                  <div className="text-center space-y-2">
-                    <p className="text-xs sm:text-sm text-[#0A3428]/60 font-sans">
+                  <div className="text-center space-y-3 pt-1">
+                    <p className="text-xs sm:text-sm md:text-base text-[#0A3428]/70 font-sans font-medium">
                       Open GCash app → Scan QR → Enter amount
                     </p>
-                    <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-[#C3A161] font-medium">
-                      <Heart className="w-3 h-3" />
-                      <span>Thank you for your generosity</span>
+                    <div className="flex items-center justify-center gap-2 text-xs sm:text-sm md:text-base text-[#C3A161] font-medium">
+                      <Heart className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />
+                      <span className="font-serif">Thank you for your generosity</span>
                     </div>
                   </div>
                 </div>
