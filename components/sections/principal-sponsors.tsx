@@ -28,7 +28,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-        className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#a7b7ff]/80 mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
+        className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#FCE1B6] mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
       >
         {children}
       </h3>
@@ -42,7 +42,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 w-full`}>
-        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-white/90 leading-snug break-words ${textAlign}`}>
+        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#FCE1B6] leading-snug break-words ${textAlign}`}>
           {name}
         </p>
       </div>
@@ -80,38 +80,77 @@ export function PrincipalSponsors() {
   return (
     <Section
       id="sponsors"
-      className="relative bg-gradient-to-b from-[#040818] via-[#0b1732]/92 to-[#050b1f] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-[#2E041A] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute -top-32 right-0 h-72 w-72 bg-[#92a5ff]/25 blur-3xl" />
-        <div className="absolute bottom-0 left-0 h-80 w-80 bg-[#4e6dff]/18 blur-[140px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(156,180,255,0.22),transparent_60%)]" />
+      {/* Ornate pattern background - matching Countdown section */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+        {/* Base pattern - diagonal lines forming diamonds */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+            `,
+            backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
+          }}
+        />
+        
+        {/* Decorative scroll motifs - using SVG pattern */}
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.15 }}>
+          <defs>
+            <pattern id="sponsorScrollPattern" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+              {/* Scroll motifs at intersections */}
+              <g fill="none" stroke="#FCE1B6" strokeWidth="0.5">
+                {/* Top scroll */}
+                <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
+                {/* Bottom scroll */}
+                <path d="M 70 140 Q 65 125 70 110 Q 75 125 70 140" />
+                {/* Left scroll */}
+                <path d="M 0 70 Q 15 65 30 70 Q 15 75 0 70" />
+                {/* Right scroll */}
+                <path d="M 140 70 Q 125 65 110 70 Q 125 75 140 70" />
+                {/* Center decorative element */}
+                <path d="M 70 30 Q 60 50 70 70 Q 80 50 70 30" />
+                <path d="M 70 110 Q 60 90 70 70 Q 80 90 70 110" />
+                <path d="M 30 70 Q 50 60 70 70 Q 50 80 30 70" />
+                <path d="M 110 70 Q 90 60 70 70 Q 90 80 110 70" />
+              </g>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#sponsorScrollPattern)" />
+        </svg>
+
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2E041A]/80 via-transparent to-[#2E041A]/80" />
       </div>
 
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#a7b7ff]/85">
-          Guiding Sponsors
+        <div className="inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/20 bg-[#FCE1B6]/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6]/85">
+          Principal Sponsors
         </div>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_20px_50px_rgba(8,16,38,0.65)] mt-4`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_48px_rgba(46,4,26,0.65)] mt-4`}
         >
-          Constellation of Honor
+          Guardians of Grace
         </h2>
-        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-white/75 max-w-2xl mx-auto mt-4 leading-relaxed`}>
-          Trisha Mae is surrounded by mentors and godparents whose love and wisdom light her path into this eighteenth year.
+        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto mt-4 leading-relaxed`}>
+          Honoring the distinguished mentors and godparents who have guided Kath's journey. Their wisdom, love, and blessings illuminate her path as she steps into womanhood on this momentous eighteenth year.
         </p>
       </div>
 
       <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="relative bg-white/12 backdrop-blur-2xl border border-white/12 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(8,18,50,0.45)] overflow-hidden">
-          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border border-white/15 rounded-lg sm:rounded-xl pointer-events-none" />
+        <div className="relative bg-[#2E041A]/80 backdrop-blur-2xl border border-[#FCE1B6]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(46,4,26,0.45)] overflow-hidden">
+          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border border-[#FCE1B6]/15 rounded-lg sm:rounded-xl pointer-events-none" />
 
           <div className="relative p-5 sm:p-7 md:p-9 lg:p-12">
             {isLoading ? (
               <div className="flex items-center justify-center py-24">
                 <div className="flex flex-col items-center gap-4">
-                  <div className="w-12 h-12 border-4 border-white/20 border-t-white/70 rounded-full animate-spin" />
-                  <span className={`${inter.className} text-white/80 text-lg`}>
+                  <div className="w-12 h-12 border-4 border-[#FCE1B6]/20 border-t-[#FCE1B6]/70 rounded-full animate-spin" />
+                  <span className={`${inter.className} text-[#FCE1B6]/80 text-lg`}>
                     Gathering her sponsors…
                   </span>
                 </div>
@@ -122,7 +161,7 @@ export function PrincipalSponsors() {
                   <p className={`${inter.className} text-red-400 text-lg mb-2`}>{error}</p>
                   <button
                     onClick={fetchSponsors}
-                    className={`${playfair.className} text-[#9cb4ff] hover:text-white transition-colors underline`}
+                    className={`${playfair.className} text-[#FCE1B6] hover:text-[#FCE1B6]/70 transition-colors underline`}
                   >
                     Try again
                   </button>
@@ -130,7 +169,7 @@ export function PrincipalSponsors() {
               </div>
             ) : sponsorPairs.length === 0 ? (
               <div className="text-center py-24">
-                <p className={`${inter.className} text-white/70 text-lg`}>
+                <p className={`${inter.className} text-[#FCE1B6]/70 text-lg`}>
                   Her sponsors will be announced soon.
                 </p>
               </div>

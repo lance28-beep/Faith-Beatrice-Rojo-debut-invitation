@@ -3,8 +3,12 @@ import { siteConfig } from "@/content/site"
 import { Clock, PartyPopper, MapPin, Navigation, Copy, Check, Palette, Car, Sparkles } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
+import { Great_Vibes, Inter } from "next/font/google"
 
-const eventPalette = ["#4e6dff", "#8199ff", "#d5deff", "#f5f7ff"]
+const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
+const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
+
+const eventPalette = ["#2E041A", "#5A1F3A", "#8B4A6A", "#FCE1B6"]
 
 export function Details() {
   const [copiedItems, setCopiedItems] = useState<Set<string>>(new Set())
@@ -43,26 +47,70 @@ export function Details() {
   ].filter(Boolean) as { label: string; value: string }[]
 
   return (
-    <Section id="details" className="relative overflow-hidden py-14 sm:py-18 md:py-20 lg:py-24">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#040818] via-[#071331] to-[#0f1d3f]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(132,155,255,0.2),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_85%,rgba(136,110,255,0.16),transparent_70%)]" />
+    <Section id="details" className="relative overflow-hidden py-14 sm:py-18 md:py-20 lg:py-24 bg-[#2E041A]">
+      {/* Ornate pattern background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+        {/* Base pattern - diagonal lines forming diamonds */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+            `,
+            backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
+          }}
+        />
+        
+        {/* Decorative scroll motifs - using SVG pattern */}
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.15 }}>
+          <defs>
+            <pattern id="scrollPatternDetails" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+              {/* Scroll motifs at intersections */}
+              <g fill="none" stroke="#FCE1B6" strokeWidth="0.5">
+                {/* Top scroll */}
+                <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
+                {/* Bottom scroll */}
+                <path d="M 70 140 Q 65 125 70 110 Q 75 125 70 140" />
+                {/* Left scroll */}
+                <path d="M 0 70 Q 15 65 30 70 Q 15 75 0 70" />
+                {/* Right scroll */}
+                <path d="M 140 70 Q 125 65 110 70 Q 125 75 140 70" />
+                {/* Center decorative element */}
+                <path d="M 70 30 Q 60 50 70 70 Q 80 50 70 30" />
+                <path d="M 70 110 Q 60 90 70 70 Q 80 90 70 110" />
+                <path d="M 30 70 Q 50 60 70 70 Q 50 80 30 70" />
+                <path d="M 110 70 Q 90 60 70 70 Q 90 80 110 70" />
+              </g>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#scrollPatternDetails)" />
+        </svg>
+
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2E041A]/80 via-transparent to-[#2E041A]/80" />
       </div>
 
       <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-2 sm:space-y-3">
-          <p className="text-[9px] sm:text-[10px] tracking-[0.55em] uppercase text-[#8aa0ff]/85">
-            Evening Of Eighteen
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-serif font-bold text-white drop-shadow-[0_18px_40px_rgba(12,20,46,0.6)]">
+        <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6]/85">
             Event Details
+          </div>
+          <h2
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_48px_rgba(46,4,26,0.65)] mt-4`}
+          >
+            Your Evening Guide
           </h2>
-          <p className="text-[11px] sm:text-xs lg:text-sm text-white/70 leading-relaxed tracking-[0.22em] max-w-2xl mx-auto px-2">
-            Here’s everything you need to glide through Trisha Mae’s celebration—from call times and
-            directions to the hues of the night sky we’re wearing.
+          <p
+            className={`${inter.className} text-xs sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-4 leading-relaxed`}
+          >
+            Join us as we celebrate Kath's journey into womanhood. Here's everything you need to know for this special evening—from call times and venue details to the elegant dress code that honors this milestone moment.
           </p>
         </div>
+
+
 
         <div className="grid gap-5 lg:gap-6 lg:grid-cols-[1.1fr_0.9fr] items-stretch mb-12 sm:mb-16 lg:mb-20">
           <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/14 bg-white/8 backdrop-blur-2xl shadow-[0_26px_65px_rgba(8,16,34,0.42)]">
@@ -74,13 +122,13 @@ export function Details() {
                 priority
                 className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#040818]/95 via-[#040818]/35 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1A0310]/95 via-[#1A0310]/35 to-transparent" />
               <div className="absolute inset-x-4 bottom-4 sm:bottom-6 text-white">
                 <h3 className="text-xl sm:text-3xl font-serif font-semibold tracking-wide drop-shadow-lg">
-                  Villa Caceres Hotel
+                  De Guzman's Events Place
                 </h3>
                 <p className="text-[10px] sm:text-[12px] text-white/80 tracking-[0.24em] uppercase">
-                  Naga City, Camarines Sur
+                  Ayos Lumboy, Guimba, Nueva Ecija
                 </p>
               </div>
             </div>
@@ -113,14 +161,14 @@ export function Details() {
               </div>
 
               <div className="rounded-2xl border border-white/18 bg-white/10 px-4 py-3.5 flex items-start sm:items-center gap-2.5 sm:gap-3 shadow-[0_12px_30px_rgba(12,20,46,0.25)]">
-                <MapPin className="mt-[2px] sm:mt-0 h-4 w-4 sm:h-5 sm:w-5 text-[#9bb4ff] flex-shrink-0" />
+                <MapPin className="mt-[2px] sm:mt-0 h-4 w-4 sm:h-5 sm:w-5 text-[#FCE1B6] flex-shrink-0" />
                 <div className="text-[11px] sm:text-sm text-white/75 leading-relaxed">{venue}</div>
               </div>
 
               <div className="flex flex-row gap-2.5 sm:gap-3">
                 <button
                   onClick={openInMaps}
-                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl border border-white/25 bg-gradient-to-r from-[#4e6dff] via-[#8ca3ff] to-[#4e6dff] px-4 py-3 text-xs sm:text-sm font-semibold text-white shadow-[0_14px_34px_rgba(46,79,210,0.38)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_rgba(66,102,225,0.45)]"
+                  className="flex-1 inline-flex items-center justify-center gap-2 rounded-2xl bg-[#FCE1B6] px-4 py-3 text-xs sm:text-sm font-semibold text-[#2E041A] transition-all duration-300 hover:-translate-y-1"
                   aria-label="Get directions to the venue"
                 >
                   <Navigation className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
@@ -147,7 +195,7 @@ export function Details() {
           <div className="space-y-5 sm:space-y-6">
             <div className="rounded-[26px] sm:rounded-[30px] border border-white/18 bg-white/10 backdrop-blur-xl shadow-[0_20px_50px_rgba(8,16,34,0.4)] p-5 sm:p-7 lg:p-8 space-y-3 sm:space-y-4">
               <div className="flex items-center gap-3">
-                <PartyPopper className="h-6 w-6 text-[#9bb4ff]" />
+                <PartyPopper className="h-6 w-6 text-[#FCE1B6]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Debut Agenda</p>
                   <h3 className="text-white text-base sm:text-lg font-semibold">Moments to Look Forward To</h3>
@@ -155,15 +203,15 @@ export function Details() {
               </div>
               <ul className="space-y-2.5 text-xs sm:text-sm text-white/75 leading-relaxed">
                 <li className="flex items-start gap-2">
-                  <Sparkles className="mt-1 h-3.5 w-3.5 text-[#d5deff]" />
+                  <Sparkles className="mt-1 h-3.5 w-3.5 text-[#FCE1B6]" />
                   18 Candles &amp; 18 Treasures will follow after the formal program—prepare a short wish or keepsake.
                 </li>
                 <li className="flex items-start gap-2">
-                  <Sparkles className="mt-1 h-3.5 w-3.5 text-[#d5deff]" />
+                  <Sparkles className="mt-1 h-3.5 w-3.5 text-[#FCE1B6]" />
                   Please arrive before the entourage call time to sign the debut guest book and take portraits.
                 </li>
                 <li className="flex items-start gap-2">
-                  <Sparkles className="mt-1 h-3.5 w-3.5 text-[#d5deff]" />
+                  <Sparkles className="mt-1 h-3.5 w-3.5 text-[#FCE1B6]" />
                   Program wraps by 8:30 PM so you can rest and travel home safely.
                 </li>
               </ul>
@@ -171,7 +219,7 @@ export function Details() {
 
             <div className="rounded-[26px] sm:rounded-[30px] border border-white/18 bg-white/10 backdrop-blur-xl shadow-[0_20px_50px_rgba(8,16,34,0.4)] p-5 sm:p-7 lg:p-8 space-y-3 sm:space-y-4">
               <div className="flex items-center gap-3">
-                <Palette className="h-6 w-6 text-[#9bb4ff]" />
+                <Palette className="h-6 w-6 text-[#FCE1B6]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Attire & Palette</p>
                   <h3 className="text-white text-base sm:text-lg font-semibold">Dress in Midnight Constellations</h3>
@@ -179,9 +227,9 @@ export function Details() {
               </div>
               <ul className="space-y-2 text-xs sm:text-sm text-white/75 leading-relaxed">
                 <li>
-                  Ladies: flowing gowns or cocktail dresses in shades of midnight blue, moonlit silver, or soft pearl.
+                  Ladies: pure black long gown.
                 </li>
-                <li>Gentlemen: barong, suit, or smart separates in deep navy, charcoal, or black.</li>
+                <li>Gentlemen: tuxedo.</li>
               </ul>
               <div className="flex gap-2 flex-wrap">
                 {eventPalette.map((color) => (
@@ -197,15 +245,15 @@ export function Details() {
 
             <div className="rounded-[26px] sm:rounded-[30px] border border-white/18 bg-white/10 backdrop-blur-xl shadow-[0_20px_50px_rgba(8,16,34,0.4)] p-5 sm:p-7 lg:p-8 space-y-3 sm:space-y-4">
               <div className="flex items-center gap-3">
-                <Car className="h-6 w-6 text-[#9bb4ff]" />
+                <Car className="h-6 w-6 text-[#FCE1B6]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Travel Notes</p>
                   <h3 className="text-white text-base sm:text-lg font-semibold">Parking & Transport</h3>
                 </div>
               </div>
               <ul className="space-y-2.5 text-xs sm:text-sm text-white/75 leading-relaxed">
-                <li>Complimentary parking is available at the hotel—just mention Trisha Mae’s debut at the gate.</li>
-                <li>Need a ride? The venue is Grab-accessible; kindly set drop-off to “Villa Caceres Hotel”.</li>
+                <li>Complimentary parking is available at the hotel—just mention Kath's debut at the gate.</li>
+                <li>Need a ride? The venue is Grab-accessible; kindly set drop-off to "De Guzman's Events Place".</li>
                 <li>If you’re staying overnight, the concierge can assist with room bookings; ask for the debut rate.</li>
               </ul>
             </div>

@@ -9,25 +9,25 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400", variable: "--font-serif" })
 
 export const metadata: Metadata = {
-  title: "Brendan & Airez - Wedding Invitation",
+  title: "Kaith Lorraine D. Andres - Debut Celebration",
   description:
-    "You're invited to the wedding of Brendan & Airez! Join us on December 28, 2025 in Alta Guia, Taguig, Metro Manila. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+    "You're invited to the debut celebration of Kaith Lorraine D. Andres! Join us on December 28, 2025 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. RSVP, view the gallery, and leave your wishes!",
   keywords:
-    "Brendan Airez wedding, Filipino wedding, RSVP, wedding gallery, wedding message wall, wedding invitation, 2025 weddings, love story, guestbook, wedding registry, wedding details, wedding venues Alta Guia, Taguig, Metro Manila, #BrendanAndAirezWedding",
+    "Kaith Lorraine D. Andres debut celebration, Filipino debut celebration, RSVP, debut celebration gallery, debut celebration message wall, debut celebration invitation, 2026 debut celebrations, debut celebration venues De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija, #KaithLorraineDAndresDebutCelebration",
   authors: [
-    { name: "Brendan" },
-    { name: "Airez" },
+    { name: "Kath Lorraine D. Andres" },
+    { name: "Kath Lorraine D. Andres" },
   ],
-  creator: "Brendan & Airez",
-  publisher: "Brendan & Airez",
+  creator: "Kath Lorraine D. Andres",
+  publisher: "Kath Lorraine D. Andres",
   formatDetection: {
     email: false,
     address: false,
     telephone: true,
   },
-  metadataBase: new URL("https://Airez-and-Brendan-invitation.vercel.app/"),
+  metadataBase: new URL("https://kath-debut-celebration-invitation.vercel.app/"),
   alternates: {
-    canonical: "https://Airez-and-Brendan-invitation.vercel.app/",
+    canonical: "https://kath-debut-celebration-invitation.vercel.app/",
   },
   icons: {
     icon: [
@@ -49,28 +49,28 @@ export const metadata: Metadata = {
   },
   manifest: "/favicon_io/site.webmanifest",
   openGraph: {
-    title: "Brendan & Airez Wedding | December 28, 2025",
+    title: "Kaith Lorraine D. Andres Debut Celebration | February 14, 2026",
     description:
-      "Celebrate the union of Brendan & Airez on December 28, 2025 in Alta Guia, Taguig, Metro Manila. Discover our love story, RSVP, view the gallery, and leave your wishes!",
-    url: "https://Airez-and-Brendan-invitation.vercel.app/",
-    siteName: "Airez and Brendan Wedding ",
+      "Celebrate the union of Kaith Lorraine D. Andres on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. Discover our love story, RSVP, view the gallery, and leave your wishes!",
+    url: "https://kath-debut-celebration-invitation.vercel.app/",
+    siteName: "Kath Lorraine D. Andres Debut Celebration ",
     locale: "en_PH",
     type: "website",
     images: [
       {
-        url: "https://Airez-and-Brendan-invitation.vercel.app/desktop-background/couple (1).jpg",
+        url: "https://kath-debut-celebration-invitation.vercel.app/Details/image.png",
         width: 1200,
         height: 630,
-        alt: "Brendan & Airez Wedding Invitation - December 28, 2025",
+        alt: "Kath Lorraine D. Andres Debut Celebration - February 14, 2026",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Brendan & Airez Wedding Invitation",
+    title: "Kath Lorraine D. Andres Debut Celebration",
     description:
-      "You're invited to the wedding of Brendan & Airez! December 28, 2025. RSVP, view our gallery, and leave a message! #BrendanAndAirezWedding",
-    images: ["https://Airez-and-Brendan-invitation.vercel.app/desktop-background/couple (1).jpg"],
+      "You're invited to the debut celebration of Kath Lorraine D. Andres! February 14, 2026. RSVP, view our gallery, and leave your wishes! #KathLorraineDAndresDebutCelebration",
+    images: ["https://kath-debut-celebration-invitation.vercel.app/Details/image.png"],
     creator: "@airezandbrendan",
   },
   robots: {
@@ -99,29 +99,29 @@ export const metadata: Metadata = {
       location: [
         {
           "@type": "Place",
-          name: "Alta Guia, Taguig, Metro Manila",
+          name: "De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija",
           address: {
             "@type": "PostalAddress",
-            addressLocality: "Taguig, Metro Manila",
+            addressLocality: "Guimba, Nueva Ecija",
             addressCountry: "PH",
           },
         },
       ],
-      image: ["https://Airez-and-Brendan-invitation.vercel.app/desktop-background/couple (1).jpg"],
+      image: ["https://kath-debut-celebration-invitation.vercel.app/Details/image.png"],
       description:
-        "You're invited to the wedding of Brendan & Airez! Join us on December 28, 2025 in Alta Guia, Taguig, Metro Manila. RSVP, read our love story, view our gallery, and leave a message for the couple.",
+        "You're invited to the debut celebration of Kath Lorraine D. Andres! Join us on February 14, 2026 in De Guzman's Events Place, Ayos Lumboy, Guimba, Nueva Ecija. RSVP, view our gallery, and leave your wishes!",
       organizer: {
         "@type": "Person",
-        name: "Brendan & Airez",
+        name: "Kath Lorraine D. Andres",
       },
       offers: {
         "@type": "Offer",
-        url: "https://Airez-and-Brendan-invitation.vercel.app/",
+        url: "https://kath-debut-celebration-invitation.vercel.app/",
         availability: "https://schema.org/InStock",
         price: "0",
         priceCurrency: "PHP",
       },
-      eventHashtag: "#BrendanAndAirezWedding",
+      eventHashtag: "#KathLorraineDAndresDebutCelebration",
     }),
   },
 }

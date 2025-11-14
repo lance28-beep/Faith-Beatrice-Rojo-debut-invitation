@@ -4,16 +4,12 @@ import { useState } from "react"
 import { Section } from "@/components/section"
 import Stack from "@/components/stack"
 import { motion } from "motion/react"
-import { Great_Vibes, WindSong, Playfair_Display, Inter } from "next/font/google"
+import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({
   subsets: ["latin"],
   weight: "400",
-})
-
-const windSong = WindSong({
-  subsets: ["latin"],
-  weight: ["400", "500"],
 })
 
 const playfair = Playfair_Display({
@@ -38,32 +34,32 @@ const TAB_CONTENT: Record<
   }
 > = {
   about: {
-    headline: "Starlit stories from the heart",
-    blurb: "The girl behind the gown, discovering grace in every season.",
+    headline: "Wine-red letters to the heart",
+    blurb: "The girl beyond the gown, wrapped in warmth and gratitude.",
     paragraphs: [
-      "Trisha Mae is a soft-spoken spark — the kind who remembers every detail, champions every friend, and never leaves a room without making someone laugh. She is the eldest sister, the dependable confidante, and the creative daydreamer who sketches gowns in the margins of her notebooks.",
-      "Whether she is curating playlists for quiet evenings or hosting impromptu get-togethers with cousins, Trisha believes celebrations are best when everyone feels seen. Her eighteenth is not just a milestone — it is a thank-you to the people who raised, cheered, and walked beside her.",
+      "Kath is a soft-spoken spark who remembers every promise and keeps every kindness tucked away like handwritten notes. She is the eldest sister, the steady confidante, and the creative dreamer who sketches gown details while listening to soul playlists.",
+      "Her debut is a love letter to family and friends—the people who whispered prayers, lifted her through late-night talks, and taught her what elegance truly means. Tonight’s palette of wine red, gold, and black mirrors the warmth, loyalty, and boldness she learned from them.",
     ],
-    highlights: ["Eldest of three siblings", "Certified matcha latte lover", "Collects handwritten letters"],
+    highlights: ["Eldest of three siblings", "Curates soulful playlists", "Collects gilded keepsakes"],
   },
   dreams: {
-    headline: "Dreaming beyond midnight wishes",
-    blurb: "Plans penned in the journal she keeps under her pillow.",
+    headline: "Dreaming in gilded tones",
+    blurb: "Plans penned between sketches and candlelit journal pages.",
     paragraphs: [
-      "Trisha dreams of building a creative studio that blends events, storytelling, and fashion. She imagines designing keepsake experiences — the kind guests remember years after the music fades. Her sketchbook is filled with silhouettes, color palettes, and dreamy mood boards for future celebrations.",
-      "Beyond career goals, she longs for simple joys: weekend road trips with family, faith-filled mornings, and a home that hums with music and warmth. Her wish list is less about luxury and more about living with intention, surrounded by the people she loves.",
+      "Kath envisions a creative studio that brings luxe soirées to life—where color palettes feel like poetry and every guest receives a story to keep. Her sketchbook brims with corset lines, velvet swatches, and deckled invitations inspired by crimson sunsets.",
+      "More than accolades, she longs for slow weekend drives with cousins, mornings steeped in prayer, and a home that hums with music and shared meals. Her dreams glow softly, grounded in faith, family, and a desire to honor the people who shaped her courage.",
     ],
-    highlights: ["Study events & brand design", "Launch a keepsake studio", "Travel with the whole family"],
+    highlights: ["Study events & design", "Launch a keepsake studio", "Travel with the whole family"],
   },
   bio: {
-    headline: "Moments that made this debut",
-    blurb: "A quick glance at the chapters leading to eighteen.",
+    headline: "Moments stitched in velvet",
+    blurb: "Snapshots that led to this crimson-lit celebration.",
     paragraphs: [
-      "Born and raised in Naga City, Trisha Mae grew up in a house where laughter was as common as lullabies. She was the kid who turned school projects into art exhibits and family gatherings into rehearsed performances.",
-      "At sixteen, she joined her first community outreach and discovered how small acts of kindness could ripple far beyond a single day. That experience still fuels her desire to weave generosity into every plan.",
-      "Today, she stands at the cusp of adulthood — grateful for unwavering parents, resilient friendships, and every lesson that refined her grace. Her debut is a celebration of all those who have shaped her glow.",
+      "Raised in Naga City, Kath grew up arranging living-room performances with cousins and turning every school project into a mini production. Home felt like warm kitchens, loud laughter, and the echo of karaoke microphones.",
+      "At sixteen, she planned a small outreach with friends and realized how generosity can linger like perfume. That moment convinced her that elegance and empathy can coexist—and should.",
+      "Tonight she stands at the cusp of adulthood, draped in deep hues yet anchored in humility. This debut is her graceful bow to the people who refined her glow.",
     ],
-    highlights: ["Born June 13, 2008 — Gemini sun", "Plays acoustic guitar after classes", "Weekend volunteer for local youth workshops"],
+    highlights: ["Born June 13, 2008 — Gemini sun", "Writes acoustic melodies", "Weekend youth volunteer"],
   },
 }
 
@@ -71,36 +67,7 @@ export function Narrative() {
   const [activeTab, setActiveTab] = useState<TabId>("about")
 
   return (
-    <Section id="narrative" className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-b from-[#040818] via-[#050d1f] to-[#0b1732]">
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(120,149,255,0.2),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_85%_20%,rgba(154,178,255,0.22),transparent_45%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(94,119,220,0.18),transparent_50%)]" />
-      </div>
-
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {Array.from({ length: 18 }).map((_, index) => (
-          <motion.div
-            key={index}
-            className="absolute w-1.5 h-1.5 rounded-full bg-white/40 shadow-[0_0_12px_rgba(204,221,255,0.6)]"
-            style={{
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              opacity: [0.1, 0.6, 0.1],
-              scale: [1, 1.4, 1],
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 6 + Math.random() * 4,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
+    <Section id="narrative" className="relative py-20 md:py-32 bg-[#1A0310]">
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -110,16 +77,16 @@ export function Narrative() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-xs sm:text-sm tracking-[0.4em] uppercase text-[#aab7ff]/70 mb-4">
-            A closer look at the celebrant
+          <p className="text-xs sm:text-sm tracking-[0.4em] uppercase text-[#FCE1B6]/80 mb-4">
+            Crimson tales of the celebrant
           </p>
           <h2
-            className={`${greatVibes.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#f2f6ff] drop-shadow-[0_18px_40px_rgba(9,18,42,0.65)]`}
+            className={`${greatVibes.className} text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#FCE1B6]`}
           >
             My Journey to 18
           </h2>
-          <p className={`${inter.className} text-base sm:text-lg md:text-xl text-[#cdd8ff] mt-4 tracking-[0.08em]`}>
-            Every chapter glows a little brighter under the midnight sky.
+          <p className={`${inter.className} text-base sm:text-lg md:text-xl text-[#FCE1B6]/80 mt-4 tracking-[0.08em]`}>
+            Every chapter glows richer beneath wine-red skies and gilded lights.
           </p>
         </motion.div>
 
@@ -138,26 +105,26 @@ export function Narrative() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#5778ff]/20 via-[#a7b7ff]/10 to-transparent blur-3xl rounded-full" />
-              <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-[#b6c4ff]/25 via-transparent to-[#647cff]/15 blur-2xl" />
-
               <Stack
                 randomRotation
                 sensitivity={190}
                 sendToBackOnClick={false}
                 cardDimensions={{ width: 280, height: 340 }}
                 cardsData={[
-                  { id: 1, img: "/LoveStory/story (5).png" },
-                  { id: 2, img: "/LoveStory/story (4).png" },
-                  { id: 3, img: "/LoveStory/story (3).png" },
-                  { id: 4, img: "/LoveStory/story (2).png" },
-                  { id: 5, img: "/LoveStory/story (1).png" },
+                  { id: 1, img: "/desktop-background/image (1).jpg" },
+                  { id: 2, img: "/desktop-background/image (2).jpg" },
+                  { id: 3, img: "/desktop-background/image (3).jpg" },
+                  { id: 4, img: "/desktop-background/image (4).jpg" },
+                  { id: 5, img: "/desktop-background/image (5).jpg" },
+                  { id: 6, img: "/desktop-background/image (6).jpg" },
+                  { id: 7, img: "/desktop-background/image (7).jpg" },
+
                 ]}
                 animationConfig={{ stiffness: 260, damping: 22 }}
               />
 
               <motion.p
-                className="text-center text-xs sm:text-sm text-[#ccd6ff]/80 mt-6 tracking-[0.3em] uppercase"
+                className="text-center text-xs sm:text-sm text-[#FCE1B6]/80 mt-6 tracking-[0.3em] uppercase"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
@@ -175,10 +142,10 @@ export function Narrative() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab)}
-                  className={`group relative overflow-hidden rounded-full border border-white/20 px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-[0.32em] uppercase transition-all duration-400 ${
+                  className={`group relative overflow-hidden rounded-full border border-[#FCE1B6]/25 px-6 sm:px-7 md:px-8 py-2.5 sm:py-3 text-xs sm:text-sm tracking-[0.32em] uppercase transition-all duration-400 ${
                     activeTab === tab
-                      ? "bg-gradient-to-r from-[#5a78ff]/90 via-[#8ca4ff]/80 to-[#5a7aff]/85 text-white shadow-[0_12px_24px_rgba(68,93,201,0.35)]"
-                      : "bg-white/5 text-[#c7d3ff]/80 hover:bg-white/10"
+                      ? "bg-gradient-to-r from-[#FCE1B6] via-[#f7d9a2] to-[#FCE1B6] text-[#2E041A] shadow-[0_12px_24px_rgba(252,225,182,0.35)]"
+                      : "bg-[#2E041A]/40 text-[#FCE1B6]/75 hover:bg-[#2E041A]/60"
                   }`}
                 >
                   <span className="relative z-10">
@@ -187,7 +154,7 @@ export function Narrative() {
                     {tab === "bio" && "Bio"}
                   </span>
                   {activeTab === tab && (
-                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
+                    <span className="absolute inset-0 bg-gradient-to-r from-transparent via-[#2E041A]/20 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
                   )}
                 </button>
               ))}
@@ -195,45 +162,41 @@ export function Narrative() {
 
             <motion.div
               key={activeTab}
-              className="relative overflow-hidden rounded-3xl border border-white/12 bg-white/7 backdrop-blur-xl shadow-[0_24px_60px_rgba(10,18,40,0.55)] px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 transition-all duration-500"
+              className="relative overflow-hidden rounded-3xl border border-[#FCE1B6]/25 bg-[#2E041A] px-6 sm:px-8 md:px-10 py-8 sm:py-10 md:py-12 transition-all duration-500"
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(171,191,255,0.18),transparent_60%)] pointer-events-none" />
-              <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#b5c2ff]/30 blur-[80px]" />
-              <div className="absolute -bottom-24 -left-24 w-48 h-48 bg-[#6d86ff]/25 blur-[90px]" />
-
-              <div className="relative z-10 space-y-5 sm:space-y-6">
+              <div className="space-y-5 sm:space-y-6">
                 <div>
-                  <p className="text-xs sm:text-sm tracking-[0.38em] uppercase text-[#9fb2ff]/80">
+                  <p className="text-xs sm:text-sm tracking-[0.38em] uppercase text-[#FCE1B6]/70">
                     {TAB_CONTENT[activeTab].blurb}
                   </p>
-                  <h3 className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-[#f1f5ff] mt-3 leading-tight`}>
+                  <h3 className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-[#FCE1B6] mt-3 leading-tight`}>
                     {TAB_CONTENT[activeTab].headline}
                   </h3>
                 </div>
 
                 <div className="space-y-4 sm:space-y-5">
                   {TAB_CONTENT[activeTab].paragraphs.map((paragraph, index) => (
-                    <p key={index} className="text-sm sm:text-base md:text-lg text-[#dbe3ff]/85 leading-relaxed">
+                    <p key={index} className="text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 leading-relaxed">
                       {paragraph}
                     </p>
                   ))}
                 </div>
 
                 {TAB_CONTENT[activeTab].highlights && (
-                  <div className="pt-4 border-t border-white/10">
-                    <p className="text-[10px] sm:text-xs tracking-[0.42em] uppercase text-[#a8b9ff]/65 mb-3 sm:mb-4">
+                  <div className="pt-4 border-t border-[#FCE1B6]/15">
+                    <p className="text-[10px] sm:text-xs tracking-[0.42em] uppercase text-[#FCE1B6]/60 mb-3 sm:mb-4">
                       Favorite highlights
                     </p>
                     <div className="flex flex-wrap gap-2.5">
                       {TAB_CONTENT[activeTab].highlights?.map((item) => (
                         <span
                           key={item}
-                          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-[11px] sm:text-xs text-[#f0f4ff]/90 tracking-[0.28em]"
+                          className="inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/25 bg-[#2E041A]/40 px-4 py-2 text-[11px] sm:text-xs text-[#FCE1B6]/90 tracking-[0.28em]"
                         >
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#90a4ff]" />
+                          <span className="h-1.5 w-1.5 rounded-full bg-[#FCE1B6]" />
                           {item}
                         </span>
                       ))}
@@ -246,20 +209,20 @@ export function Narrative() {
         </motion.div>
 
         <motion.div
-          className="mt-16 sm:mt-20 lg:mt-24 grid sm:grid-cols-3 gap-4 sm:gap-6 rounded-3xl border border-white/12 bg-white/5 backdrop-blur-xl px-6 sm:px-10 md:px-12 py-6 sm:py-8"
+          className="mt-16 sm:mt-20 lg:mt-24 grid sm:grid-cols-3 gap-4 sm:gap-6 rounded-3xl border border-[#FCE1B6]/20 bg-[#2E041A] px-6 sm:px-10 md:px-12 py-6 sm:py-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           {[
-            { label: "Debut Date", value: "June 13, 2026" },
-            { label: "Grand Venue", value: "Villa Caceres Hotel" },
-            { label: "Call Time", value: "4:10 PM" },
+            { label: "Debut Date", value: siteConfig.wedding.date },
+            { label: "Grand Venue", value: siteConfig.ceremony.venue },
+            { label: "Call Time", value: siteConfig.wedding.time },
           ].map((item) => (
             <div key={item.label} className="text-center space-y-2">
-              <p className="text-[11px] sm:text-xs tracking-[0.42em] uppercase text-[#9fb2ff]/70">{item.label}</p>
-              <p className={`${playfair.className} text-lg sm:text-xl md:text-2xl text-[#f0f4ff]`}>{item.value}</p>
+              <p className="text-[11px] sm:text-xs tracking-[0.42em] uppercase text-[#FCE1B6]/70">{item.label}</p>
+              <p className={`${playfair.className} text-lg sm:text-xl md:text-2xl text-[#FCE1B6]`}>{item.value}</p>
             </div>
           ))}
         </motion.div>

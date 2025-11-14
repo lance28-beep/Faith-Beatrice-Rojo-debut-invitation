@@ -87,104 +87,141 @@ export function BookOfGuests() {
   return (
     <Section
       id="guests"
-      className="relative z-[40] overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-b from-[#040818] via-[#08102d]/92 to-[#050b1f]"
+      className="relative z-[40] overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#2E041A]"
     >
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(146,168,255,0.22),transparent_60%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_85%,rgba(146,168,255,0.18),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_65%)] opacity-55" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#101b3d]/30 to-[#040818]/85" />
+      {/* Ornate pattern background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+        {/* Base pattern - diagonal lines forming diamonds */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+            `,
+            backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
+          }}
+        />
+        
+        {/* Decorative scroll motifs - using SVG pattern */}
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.15 }}>
+          <defs>
+            <pattern id="scrollPatternGuests" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+              {/* Scroll motifs at intersections */}
+              <g fill="none" stroke="#FCE1B6" strokeWidth="0.5">
+                {/* Top scroll */}
+                <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
+                {/* Bottom scroll */}
+                <path d="M 70 140 Q 65 125 70 110 Q 75 125 70 140" />
+                {/* Left scroll */}
+                <path d="M 0 70 Q 15 65 30 70 Q 15 75 0 70" />
+                {/* Right scroll */}
+                <path d="M 140 70 Q 125 65 110 70 Q 125 75 140 70" />
+                {/* Center decorative element */}
+                <path d="M 70 30 Q 60 50 70 70 Q 80 50 70 30" />
+                <path d="M 70 110 Q 60 90 70 70 Q 80 90 70 110" />
+                <path d="M 30 70 Q 50 60 70 70 Q 50 80 30 70" />
+                <path d="M 110 70 Q 90 60 70 70 Q 90 80 110 70" />
+              </g>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#scrollPatternGuests)" />
+        </svg>
+
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2E041A]/80 via-transparent to-[#2E041A]/80" />
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-14 lg:mb-16 space-y-3 sm:space-y-4">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#a7b7ff]/85">
-            Our Starlit Circle
+          <div className="inline-flex items-center gap-2 rounded-full border border-[#FCE1B6]/20 bg-[#2E041A]/40 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-[#FCE1B6]">
+            Our Honored Guests
           </div>
           <h2
-            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(10,18,46,0.6)]`}
+            className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] drop-shadow-[0_18px_40px_rgba(46,4,26,0.68)]`}
           >
-            Guests of Her Constellation
+            Celebrating Together
           </h2>
-          <p className={`${inter.className} text-xs sm:text-sm md:text-base text-white/75 max-w-2xl mx-auto leading-relaxed`}>
-            Every name here is a shimmering light guiding Trisha Mae into her eighteenth year. Thank you for being
-            part of her midnight celebration.
+          <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#FCE1B6]/85 max-w-2xl mx-auto leading-relaxed`}>
+            Each name here represents someone special in Kath's life. Thank you for being part of this elegant
+            debut celebration and for honoring this milestone with your presence.
           </p>
         </div>
 
         <div className="relative mb-10 sm:mb-12 lg:mb-16">
-          <div className="absolute inset-0 -z-10 blur-3xl bg-gradient-to-r from-[#4e6dff]/25 via-[#829aff]/20 to-[#5a7aff]/25 opacity-70" />
-          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/12 bg-white/12 backdrop-blur-2xl shadow-[0_25px_75px_rgba(8,18,40,0.45)] px-6 sm:px-10 md:px-12 py-8 sm:py-10 md:py-12">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/6" />
+          <div className="absolute inset-0 -z-10 blur-3xl bg-[#FCE1B6]/10 opacity-60" />
+          <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border-2 border-[#FCE1B6]/20 bg-[#FCE1B6] shadow-[0_25px_75px_rgba(46,4,26,0.4)] px-6 sm:px-10 md:px-12 py-8 sm:py-10 md:py-12">
             <div className="relative z-10 flex flex-col gap-6 sm:gap-8 md:gap-10">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6 sm:gap-8">
-                <div className="inline-flex items-center gap-3 sm:gap-4 rounded-full border border-white/20 bg-white/12 px-5 py-3 shadow-[0_15px_35px_rgba(12,22,48,0.35)]">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#4e6dff] via-[#7f96ff] to-[#4e6dff] shadow-[0_14px_35px_rgba(46,79,210,0.45)]">
-                    <Heart className="h-6 w-6 text-white" />
+                <div className="inline-flex items-center gap-3 sm:gap-4 rounded-2xl border-2 border-[#2E041A]/20 bg-[#2E041A]/10 px-5 py-3 shadow-[0_12px_30px_rgba(46,4,26,0.25)]">
+                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#2E041A] shadow-[0_8px_20px_rgba(46,4,26,0.3)]">
+                    <Heart className="h-6 w-6 text-[#FCE1B6]" />
                   </div>
                   <div>
-                    <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.48em] text-white/70`}>
+                    <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.48em] text-[#2E041A]/70`}>
                       confirmed guests
                     </p>
                     <h3
-                      className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-white leading-tight drop-shadow-[0_12px_28px_rgba(14,28,66,0.55)]`}
+                      className={`${playfair.className} text-2xl sm:text-3xl md:text-4xl text-[#2E041A] leading-tight`}
                     >
-                      {totalGuests} {totalGuests === 1 ? "Star" : "Stars"} in Attendance
+                      {totalGuests} {totalGuests === 1 ? "Guest" : "Guests"} Confirmed
                     </h3>
                   </div>
                 </div>
 
                 <div className="grid gap-4 sm:gap-5 text-left sm:text-right">
                   <div>
-                    <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.42em] text-white/70`}>
+                    <p className={`${inter.className} text-[10px] sm:text-xs uppercase tracking-[0.42em] text-[#2E041A]/70`}>
                       RSVP ENTRIES
                     </p>
-                    <p className={`${playfair.className} text-xl sm:text-2xl text-white`}>
+                    <p className={`${playfair.className} text-xl sm:text-2xl text-[#2E041A]`}>
                       {guests.length} {guests.length === 1 ? "Loved One" : "Loved Ones"}
                     </p>
                   </div>
-                  <div className="inline-flex items-center justify-center sm:justify-end gap-2 text-[11px] sm:text-xs tracking-[0.4em] uppercase text-[#c9d5ff]/80">
-                    <Sparkles className="h-4 w-4 text-[#a7b7ff]" />
-                    <span>Thank you for lighting the night</span>
+                  <div className="inline-flex items-center justify-center sm:justify-end gap-2 text-[11px] sm:text-xs tracking-[0.4em] uppercase text-[#2E041A]/80">
+                    <Sparkles className="h-4 w-4 text-[#2E041A]" />
+                    <span>Thank you for joining us</span>
                   </div>
                 </div>
               </div>
-              <p className={`${inter.className} text-sm sm:text-base text-white/75 leading-relaxed max-w-3xl`}>
-                Your RSVP ensures Trisha Mae saves you a seat beneath the constellations. If plans change, kindly
-                update your response so we can welcome every guest with care.
+              <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/80 leading-relaxed max-w-3xl`}>
+                Your RSVP ensures we can prepare for your presence at this elegant celebration. If your plans change,
+                please update your response so we can welcome every guest with care and attention.
               </p>
             </div>
           </div>
         </div>
 
         <div className="relative">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#4e6dff]/10 via-transparent to-[#9cb4ff]/12 blur-3xl opacity-70" />
-          <div className="relative overflow-hidden rounded-[30px] border border-white/12 bg-white/10 backdrop-blur-2xl shadow-[0_30px_85px_rgba(8,18,40,0.48)] px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/12 via-transparent to-white/8" />
-
+          <div className="absolute inset-0 -z-10 bg-[#FCE1B6]/5 blur-3xl opacity-60" />
+          <div className="relative overflow-hidden rounded-[30px] border-2 border-[#FCE1B6]/20 bg-[#FCE1B6] shadow-[0_30px_85px_rgba(46,4,26,0.4)] px-4 sm:px-6 md:px-8 lg:px-10 py-6 sm:py-8 md:py-10">
             {isLoading ? (
               <div className="relative z-10 flex flex-col items-center justify-center gap-5 py-24 sm:py-28">
-                <Loader2 className="h-12 w-12 animate-spin text-[#a7b7ff]" />
-                <span className={`${inter.className} text-base sm:text-lg text-white/80`}>
-                  Opening the guestbook…
+                <Loader2 className="h-12 w-12 animate-spin text-[#2E041A]" />
+                <span className={`${inter.className} text-base sm:text-lg text-[#2E041A]/80`}>
+                  Loading the guest list…
                 </span>
               </div>
             ) : error ? (
               <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-24 sm:py-28 text-center">
-                <MessageSquare className="h-12 w-12 text-[#ff8a8a]/80" />
-                <p className={`${inter.className} text-base sm:text-lg text-white/80 max-w-md`}>{error}</p>
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
+                  <MessageSquare className="h-6 w-6 text-[#2E041A]" />
+                </div>
+                <p className={`${inter.className} text-base sm:text-lg text-[#2E041A]/80 max-w-md`}>{error}</p>
               </div>
             ) : guests.length === 0 ? (
               <div className="relative z-10 flex flex-col items-center justify-center gap-4 py-24 sm:py-28 text-center">
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-[#4e6dff] via-[#7f96ff] to-[#4e6dff] shadow-[0_18px_40px_rgba(22,36,84,0.45)]">
-                  <Heart className="h-8 w-8 text-white" />
+                <div className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-[#2E041A] bg-[#2E041A]/10">
+                  <Heart className="h-8 w-8 text-[#2E041A]" />
                 </div>
-                <h3 className={`${playfair.className} text-2xl sm:text-3xl text-white`}>
-                  No RSVPs shimmer here just yet.
+                <h3 className={`${playfair.className} text-2xl sm:text-3xl text-[#2E041A]`}>
+                  No RSVPs confirmed yet.
                 </h3>
-                <p className={`${inter.className} text-sm sm:text-base text-white/75 max-w-md`}>
-                  Be the first to confirm a seat at her debut. Your name will glow in this constellation as soon as
-                  you RSVP.
+                <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/75 max-w-md`}>
+                  Be the first to confirm your attendance at Kath's debut. Your name will appear here as soon as
+                  you submit your RSVP.
                 </p>
               </div>
             ) : (
@@ -192,13 +229,12 @@ export function BookOfGuests() {
                 {guests.map((guest, index) => (
                   <div
                     key={index}
-                    className="group relative overflow-hidden rounded-3xl border border-white/14 bg-white/16 px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 backdrop-blur-xl transition-all duration-300 hover:border-white/35 hover:shadow-[0_22px_55px_rgba(18,32,72,0.45)]"
+                    className="group relative overflow-hidden rounded-2xl border-2 border-[#2E041A]/20 bg-white px-4 sm:px-5 md:px-6 py-4 sm:py-5 md:py-6 transition-all duration-300 hover:border-[#2E041A]/40 hover:shadow-[0_12px_30px_rgba(46,4,26,0.25)]"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#6d86ff]/18 via-transparent to-[#9fb2ff]/16 opacity-70 group-hover:opacity-100 transition-opacity duration-300" />
                     <div className="relative z-10 flex flex-col sm:flex-row gap-3.5 sm:gap-4.5">
                       <div className="relative h-12 w-12 sm:h-14 sm:w-14 flex-shrink-0">
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#4e6dff] via-[#7f96ff] to-[#4e6dff] shadow-[0_16px_40px_rgba(26,44,96,0.45)]" />
-                        <div className="relative h-full w-full rounded-full border border-white/20 bg-white/10 flex items-center justify-center text-white font-semibold text-sm sm:text-base">
+                        <div className="absolute inset-0 rounded-full bg-[#2E041A] shadow-[0_8px_20px_rgba(46,4,26,0.25)]" />
+                        <div className="relative h-full w-full rounded-full border-2 border-[#2E041A]/20 bg-[#FCE1B6] flex items-center justify-center text-[#2E041A] font-semibold text-sm sm:text-base">
                           {getInitials(guest.Name)}
                         </div>
                       </div>
@@ -207,24 +243,24 @@ export function BookOfGuests() {
                         <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-3">
                           <div className="flex-1 pr-16 sm:pr-0">
                             <h4
-                              className={`${playfair.className} text-lg sm:text-xl text-white drop-shadow-sm group-hover:text-[#dbe3ff] transition-colors`}
+                              className={`${playfair.className} text-lg sm:text-xl text-[#2E041A] group-hover:text-[#2E041A]/80 transition-colors`}
                             >
                               {guest.Name}
                             </h4>
                             {guest.Email && guest.Email !== "Pending" && (
-                              <div className="mt-1 inline-flex items-center gap-2 text-[11px] sm:text-xs text-white/70">
-                                <Mail className="h-3.5 w-3.5 text-[#cbd6ff]" />
+                              <div className="mt-1 inline-flex items-center gap-2 text-[11px] sm:text-xs text-[#2E041A]/60">
+                                <Mail className="h-3.5 w-3.5 text-[#2E041A]/50" />
                                 <span className={`${inter.className} break-all`}>{guest.Email}</span>
                               </div>
                             )}
                           </div>
 
                           <div className="absolute right-4 top-4 sm:static sm:right-auto sm:top-auto inline-flex items-center gap-2">
-                            <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/12 border border-white/20 text-[#a7b7ff]">
-                              <User className="h-4 w-4" />
+                            <div className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#2E041A]/10 border-2 border-[#2E041A]/20">
+                              <User className="h-4 w-4 text-[#2E041A]" />
                             </div>
                             <span
-                              className={`${inter.className} inline-flex items-center justify-center rounded-full border border-white/25 bg-white/12 px-3.5 py-1.5 text-xs sm:text-sm text-white/85`}
+                              className={`${inter.className} inline-flex items-center justify-center rounded-full border-2 border-[#2E041A]/20 bg-[#2E041A]/10 px-3.5 py-1.5 text-xs sm:text-sm text-[#2E041A]`}
                             >
                               {guest.Guest ? parseInt(String(guest.Guest)) || 1 : 1}{" "}
                               {(parseInt(String(guest.Guest || "1")) || 1) === 1 ? "guest" : "guests"}
@@ -233,11 +269,11 @@ export function BookOfGuests() {
                         </div>
 
                         {guest.Message && (
-                          <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-white/15">
+                          <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-[#2E041A]/20">
                             <div className="flex items-start gap-2 sm:gap-3">
-                              <MessageSquare className="mt-0.5 h-4 w-4 text-[#a7b7ff]" />
-                              <p className={`${inter.className} text-sm sm:text-base text-white/80 italic leading-relaxed flex-1`}>
-                                “{guest.Message}”
+                              <MessageSquare className="mt-0.5 h-4 w-4 text-[#2E041A]" />
+                              <p className={`${inter.className} text-sm sm:text-base text-[#2E041A]/80 italic leading-relaxed flex-1`}>
+                                "{guest.Message}"
                               </p>
                             </div>
                           </div>

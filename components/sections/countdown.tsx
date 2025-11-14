@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import { Section } from "@/components/section"
 import Counter from "@/components/counter"
 import { WindSong, Playfair_Display, Great_Vibes } from "next/font/google"
+import { siteConfig } from "@/content/site"
 
 interface TimeLeft {
   days: number
@@ -36,10 +37,39 @@ export function Countdown() {
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      // Target: June 13, 2026 at 4:10 PM GMT+8
-      // Compute using UTC to avoid timezone parsing inconsistencies across browsers
-      // 4:10 PM GMT+8 == 08:10 AM UTC
-      const targetDate = Date.UTC(2026, 5, 13, 8, 10, 0) // June is month 5 (0-indexed)
+      // Parse date from siteConfig: "February 14, 2026"
+      const dateStr = siteConfig.wedding.date
+      const timeStr = siteConfig.wedding.time // "3:00 PM"
+      const dateMatch = dateStr.match(/(\w+)\s+(\d+),\s+(\d+)/)
+      
+      if (!dateMatch) return
+      
+      const [, monthName, day, year] = dateMatch
+      const monthMap: Record<string, number> = {
+        January: 0, February: 1, March: 2, April: 3, May: 4, June: 5,
+        July: 6, August: 7, September: 8, October: 9, November: 10, December: 11
+      }
+      
+      // Parse time: "3:00 PM" -> 15:00
+      const timeMatch = timeStr.match(/(\d+):(\d+)\s*(AM|PM)/i)
+      let hours = 0
+      let minutes = 0
+      if (timeMatch) {
+        hours = parseInt(timeMatch[1])
+        minutes = parseInt(timeMatch[2])
+        if (timeMatch[3].toUpperCase() === 'PM' && hours !== 12) hours += 12
+        if (timeMatch[3].toUpperCase() === 'AM' && hours === 12) hours = 0
+      }
+      
+      // Convert to UTC (assuming GMT+8, subtract 8 hours)
+      const targetDate = Date.UTC(
+        parseInt(year),
+        monthMap[monthName] || 0,
+        parseInt(day),
+        hours - 8,
+        minutes,
+        0
+      )
       const now = new Date().getTime()
       const difference = targetDate - now
 
@@ -77,11 +107,8 @@ export function Countdown() {
     <div className="flex flex-col items-center gap-3 sm:gap-4">
       {/* Simple, elegant card */}
       <div className="relative group">
-        {/* Subtle glow on hover */}
-        <div className="absolute -inset-1 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-2xl bg-gradient-to-br from-[#9cb4ff]/30 via-[#6e88f7]/20 to-transparent" />
-        
         {/* Main card */}
-        <div className="relative bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 lg:px-8 lg:py-7 border border-white/12 shadow-[0_12px_30px_rgba(11,21,58,0.35)] hover:shadow-[0_16px_38px_rgba(26,52,112,0.45)] transition-all duration-300 hover:border-white/20 min-w-[65px] sm:min-w-[75px] md:min-w-[90px] lg:min-w-[100px]">
+        <div className="relative bg-[#2E041A]/80 backdrop-blur-md rounded-xl sm:rounded-2xl px-3 py-4 sm:px-5 sm:py-5 md:px-6 md:py-6 lg:px-8 lg:py-7 border border-[#FCE1B6]/20 shadow-[0_12px_30px_rgba(46,4,26,0.35)] hover:shadow-[0_16px_38px_rgba(46,4,26,0.45)] transition-all duration-300 hover:border-[#FCE1B6]/30 min-w-[65px] sm:min-w-[75px] md:min-w-[90px] lg:min-w-[100px]">
           {/* Counter */}
           <div className="relative z-10 flex items-center justify-center">
             <Counter
@@ -90,12 +117,12 @@ export function Countdown() {
               fontSize={36}
               padding={6}
               gap={3}
-              textColor="#e9efff"
+              textColor="#FCE1B6"
               fontWeight={500}
               borderRadius={8}
               horizontalPadding={4}
               gradientHeight={10}
-              gradientFrom="rgba(138,161,255,0.25)"
+              gradientFrom="rgba(252,225,182,0.1)"
               gradientTo="transparent"
             />
           </div>
@@ -104,10 +131,10 @@ export function Countdown() {
 
       {/* Enhanced label */}
       <div className="flex flex-col items-center text-center gap-1">
-        <span className={`${playfair.className} text-base sm:text-lg text-[#f4f7ff] tracking-[0.25em] uppercase`}>
+        <span className={`${playfair.className} text-base sm:text-lg text-[#FCE1B6] tracking-[0.25em] uppercase`}>
           {label}
         </span>
-        <span className="text-[10px] sm:text-xs tracking-[0.45em] uppercase text-[#c7d4ff]/70">
+        <span className="text-[10px] sm:text-xs tracking-[0.45em] uppercase text-[#FCE1B6]/70">
           {labelTaglines[label] ?? "Until the Celebration"}
         </span>
       </div>
@@ -117,28 +144,65 @@ export function Countdown() {
   return (
     <Section
       id="countdown"
-      className="relative bg-gradient-to-b from-[#040818] via-[#0b1732]/92 to-[#050b1f] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-[#2E041A] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
     >
-      {/* Subtle background elements */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(138,161,255,0.18),transparent_55%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_25%,rgba(89,122,255,0.2),transparent_45%)] mix-blend-screen" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_85%,rgba(159,182,255,0.14),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.08),transparent_60%)] opacity-40 mix-blend-screen" />
+      {/* Ornate pattern background */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
+        {/* Base pattern - diagonal lines forming diamonds */}
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              repeating-linear-gradient(45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(-45deg, transparent, transparent 70px, rgba(252,225,182,0.1) 70px, rgba(252,225,182,0.1) 71px),
+              repeating-linear-gradient(135deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px),
+              repeating-linear-gradient(225deg, transparent, transparent 35px, rgba(252,225,182,0.08) 35px, rgba(252,225,182,0.08) 36px)
+            `,
+            backgroundSize: '70px 70px, 70px 70px, 35px 35px, 35px 35px',
+          }}
+        />
+        
+        {/* Decorative scroll motifs - using SVG pattern */}
+        <svg className="absolute inset-0 w-full h-full" style={{ opacity: 0.15 }}>
+          <defs>
+            <pattern id="scrollPattern" x="0" y="0" width="140" height="140" patternUnits="userSpaceOnUse">
+              {/* Scroll motifs at intersections */}
+              <g fill="none" stroke="#FCE1B6" strokeWidth="0.5">
+                {/* Top scroll */}
+                <path d="M 70 0 Q 65 15 70 30 Q 75 15 70 0" />
+                {/* Bottom scroll */}
+                <path d="M 70 140 Q 65 125 70 110 Q 75 125 70 140" />
+                {/* Left scroll */}
+                <path d="M 0 70 Q 15 65 30 70 Q 15 75 0 70" />
+                {/* Right scroll */}
+                <path d="M 140 70 Q 125 65 110 70 Q 125 75 140 70" />
+                {/* Center decorative element */}
+                <path d="M 70 30 Q 60 50 70 70 Q 80 50 70 30" />
+                <path d="M 70 110 Q 60 90 70 70 Q 80 90 70 110" />
+                <path d="M 30 70 Q 50 60 70 70 Q 50 80 30 70" />
+                <path d="M 110 70 Q 90 60 70 70 Q 90 80 110 70" />
+              </g>
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#scrollPattern)" />
+        </svg>
+
+        {/* Subtle overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2E041A]/80 via-transparent to-[#2E041A]/80" />
       </div>
 
       {/* Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#9fb2ff]/70 mb-3">
-          Counting the Stars
+        <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#FCE1B6]/70 mb-3">
+          Crimson Evenings Await
         </p>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-[#f3f6ff] mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(8,18,46,0.65)]`}
+          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-[#FCE1B6] mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(8,18,46,0.65)]`}
         >
-          Countdown to Her Grand Debut
+          Countdown to the Gilded Soirée
         </h2>
-        <p className="text-sm sm:text-base md:text-lg text-[#dbe3ff]/85 font-light max-w-2xl mx-auto leading-relaxed">
-          Every second shimmers closer to Trisha Mae’s eighteenth chapter
+        <p className="text-sm sm:text-base md:text-lg text-[#FCE1B6]/85 font-light max-w-2xl mx-auto leading-relaxed">
+          Each heartbeat draws us nearer to a night draped in wine red, gold, and black—Kath's luminous coming of age.
         </p>
       </div>
 
@@ -157,19 +221,19 @@ export function Countdown() {
             {/* Save The Date Header */}
             <div className="text-center mb-8 sm:mb-10 md:mb-12">
               <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#cbd8ff]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#FCE1B6]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
               </div>
 
-              <p className="text-xs sm:text-sm md:text-base font-medium text-[#bfcfff] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4">
+              <p className="text-xs sm:text-sm md:text-base font-medium text-[#FCE1B6] uppercase tracking-[0.25em] sm:tracking-[0.35em] mb-3 sm:mb-4">
                 Save The Debut Night
               </p>
 
               <div className="flex items-center justify-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#cbd8ff]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#FCE1B6]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
               </div>
             </div>
 
@@ -178,9 +242,9 @@ export function Countdown() {
               {/* Month - Elegant script style */}
               <div className="mb-4 sm:mb-5 md:mb-6">
                 <p
-                  className={`${windSong.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#e8efff] leading-none drop-shadow-[0_10px_35px_rgba(7,16,39,0.65)]`}
+                  className={`${windSong.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#FCE1B6] leading-none drop-shadow-[0_10px_35px_rgba(46,4,26,0.65)]`}
                 >
-                  June
+                  {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { month: 'long' })}
                 </p>
               </div>
               
@@ -188,17 +252,17 @@ export function Countdown() {
               <div className="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                 {/* Day - Large and bold focal point */}
                 <p
-                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-semibold text-transparent bg-clip-text bg-gradient-to-br from-[#9cb4ff] via-[#d5deff] to-[#7a92ff] leading-none drop-shadow-[0_18px_35px_rgba(37,59,126,0.45)]"
+                  className="text-7xl sm:text-8xl md:text-9xl lg:text-[10rem] xl:text-[12rem] font-semibold text-[#FCE1B6] leading-none drop-shadow-[0_18px_35px_rgba(46,4,26,0.45)]"
                 >
-                  13
+                  {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { day: 'numeric' })}
                 </p>
                 
                 {/* Vertical divider */}
-                <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#9cb4ff]/60 to-transparent" />
+                <div className="h-16 sm:h-20 md:h-24 lg:h-28 w-px bg-gradient-to-b from-transparent via-[#FCE1B6]/60 to-transparent" />
                 
                 {/* Year - Elegant and refined */}
-                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#dbe3ff] leading-none tracking-[0.2em] uppercase">
-                  2026
+                <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#FCE1B6] leading-none tracking-[0.2em] uppercase">
+                  {new Date(siteConfig.wedding.date).toLocaleDateString('en-US', { year: 'numeric' })}
                 </p>
               </div>
             </div>
@@ -207,22 +271,26 @@ export function Countdown() {
             <div className="text-center">
               {/* Top decorative dots */}
               <div className="flex items-center justify-center gap-2 mb-3 sm:mb-4">
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#cbd8ff]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#FCE1B6]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
               </div>
               
               {/* Time */}
-              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-[#dbe3ff]/85 tracking-[0.4em] uppercase mb-3 sm:mb-4">
-                <span className="block sm:inline">4:10 PM • Villa Caceres Hotel</span>
-                <span className="block sm:inline sm:before:content-['•'] sm:before:mx-2">Naga City</span>
+              <div className="text-xs sm:text-sm md:text-base lg:text-lg font-medium text-[#FCE1B6]/85 tracking-[0.4em] uppercase mb-3 sm:mb-4">
+                <span className="block sm:inline">{siteConfig.wedding.time} • {siteConfig.ceremony.venue}</span>
+                <span className="block sm:inline sm:before:content-['•'] sm:before:mx-2">
+                  {siteConfig.ceremony.location.includes(',') 
+                    ? siteConfig.ceremony.location.split(',').slice(-2).join(',').trim()
+                    : siteConfig.ceremony.location}
+                </span>
               </div>
               
               {/* Bottom decorative dots */}
               <div className="flex items-center justify-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
-                <div className="w-1 h-1 bg-[#cbd8ff]/60 rounded-full" />
-                <div className="w-1.5 h-1.5 bg-[#9cb4ff]/70 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
+                <div className="w-1 h-1 bg-[#FCE1B6]/60 rounded-full" />
+                <div className="w-1.5 h-1.5 bg-[#FCE1B6]/70 rounded-full" />
               </div>
             </div>
           </div>
