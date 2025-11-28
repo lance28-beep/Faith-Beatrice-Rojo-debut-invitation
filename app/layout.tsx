@@ -6,7 +6,7 @@ import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { siteConfig } from "@/content/site"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://Xyza-Jenine-debut-invitation.vercel.app"
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://xyza-jenine-debut-invitation.vercel.app/"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
 const eventImagePath = "/desktop-background/debut 2.jpg"
 const eventImageUrl = `${canonicalUrl}${eventImagePath}`
