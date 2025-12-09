@@ -120,7 +120,7 @@ export function Entourage() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-                  className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#172822] font-semibold mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
+                  className={`${playfair.className} text-[10px] sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.45em] uppercase text-[#172822] font-semibold mb-1.5 sm:mb-2 md:mb-3 ${textAlign} ${className}`}
       >
         {children}
       </h3>
@@ -149,13 +149,13 @@ export function Entourage() {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-      <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 leading-relaxed`}
+      <div className={`flex flex-col ${containerAlign} justify-center py-0.5 sm:py-1.5 md:py-2 leading-tight sm:leading-relaxed`}
       >
-        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#172822] ${textAlign}`}>
+        <p className={`${inter.className} text-[12px] sm:text-sm md:text-base font-medium text-[#172822] ${textAlign}`}>
           {capitalizeName(member.Name)}
         </p>
         {showRole && member.RoleTitle && (
-          <p className={`${inter.className} text-[10px] sm:text-[11px] md:text-xs font-normal text-[#172822]/70 mt-0.5 leading-snug ${textAlign}`}>
+          <p className={`${inter.className} text-[9px] sm:text-[11px] md:text-xs font-normal text-[#172822]/70 mt-0 leading-tight sm:leading-snug ${textAlign}`}>
             {member.RoleTitle}
           </p>
         )}
@@ -178,10 +178,10 @@ export function Entourage() {
   }) => {
     if (singleTitle) {
       return (
-        <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
+        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
           <SectionTitle>{singleTitle}</SectionTitle>
           <div
-            className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-4 md:gap-x-6 gap-y-2 sm:gap-y-3 md:gap-y-4 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
+            className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-3 md:gap-x-5 gap-y-1 sm:gap-y-2 md:gap-y-3 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
           >
             {children}
           </div>
@@ -190,21 +190,21 @@ export function Entourage() {
     }
 
     return (
-      <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-        <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-4 md:gap-x-6 mb-3 sm:mb-4">
+      <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+        <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-3 md:gap-x-5 mb-2 sm:mb-3">
           {leftTitle && (
-            <SectionTitle align="right" className="pr-3 sm:pr-4 md:pr-6">
+            <SectionTitle align="right" className="pr-2 sm:pr-3 md:pr-5">
               {leftTitle}
             </SectionTitle>
           )}
           {rightTitle && (
-            <SectionTitle align="left" className="pl-3 sm:pl-4 md:pl-6">
+            <SectionTitle align="left" className="pl-2 sm:pl-3 md:pl-5">
               {rightTitle}
             </SectionTitle>
           )}
         </div>
         <div
-          className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-4 md:gap-x-6 gap-y-2 sm:gap-y-3 md:gap-y-4 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
+          className={`grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-3 md:gap-x-5 gap-y-1 sm:gap-y-2 md:gap-y-3 ${centerContent ? "max-w-2xl mx-auto" : ""}`}
         >
           {children}
         </div>
@@ -214,15 +214,15 @@ export function Entourage() {
 
   const renderDivider = (categoryIndex: number) =>
     categoryIndex > 0 && (
-      <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-        <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#E6A379]/20 to-transparent" />
+      <div className="flex justify-center py-2 sm:py-3 mb-3 sm:mb-5 md:mb-6">
+        <div className="h-px w-24 sm:w-40 bg-gradient-to-r from-transparent via-[#E6A379]/20 to-transparent" />
       </div>
     )
 
   return (
     <section
       id="entourage"
-      className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-transparent"
+      className="relative overflow-hidden py-8 sm:py-12 md:py-20 lg:py-24 bg-transparent"
     >
       <ButterflyCluster
         className="pointer-events-none absolute -top-8 sm:-top-12 left-0 sm:left-8 opacity-70"
@@ -235,51 +235,51 @@ export function Entourage() {
         ariaHidden={true}
       />
 
-      <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
+      <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4">
+        <div className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
           Mikaella Arkean&apos;s Circle
         </div>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.75)] mt-4`}
+          className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.75)] mt-2 sm:mt-4`}
         >
           Her Enchanted Entourage
         </h2>
         <p
-          className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-4 leading-relaxed`}
+          className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-2 sm:mt-4 leading-relaxed px-2`}
         >
           Every role blooms around Mikaella Arkean—parents, sponsors, and friends who hold her steady, cheer her on, and illuminate the evening with their love.
         </p>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="relative bg-white border-2 border-[#E6A379]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(23,40,34,0.45)] overflow-hidden">
-          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-[#E6A379]/20 rounded-lg sm:rounded-xl pointer-events-none" />
-          <div className="relative p-5 sm:p-7 md:p-9 lg:p-12">
+      <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="relative bg-white border-2 border-[#E6A379]/20 rounded-lg sm:rounded-2xl shadow-[0_25px_80px_rgba(23,40,34,0.45)] overflow-hidden">
+          <div className="absolute inset-[8px] sm:inset-[14px] md:inset-[18px] border-2 border-[#E6A379]/20 rounded-md sm:rounded-xl pointer-events-none" />
+          <div className="relative p-3 sm:p-6 md:p-9 lg:p-12">
             {isLoading ? (
-              <div className="flex items-center justify-center py-24">
-                <div className="flex flex-col items-center gap-4">
-                  <Loader2 className="h-12 w-12 animate-spin text-[#E6A379]" />
-                  <span className={`${inter.className} text-[#172822]/80 text-lg`}>
+              <div className="flex items-center justify-center py-12 sm:py-20">
+                <div className="flex flex-col items-center gap-3 sm:gap-4">
+                  <Loader2 className="h-10 w-10 sm:h-12 sm:w-12 animate-spin text-[#E6A379]" />
+                  <span className={`${inter.className} text-[#172822]/80 text-sm sm:text-lg`}>
                     Loading the entourage…
                   </span>
                 </div>
               </div>
             ) : error ? (
-              <div className="flex items-center justify-center py-24">
+              <div className="flex items-center justify-center py-12 sm:py-20">
                 <div className="text-center">
-                  <p className={`${inter.className} text-red-600 text-lg mb-2`}>{error}</p>
+                  <p className={`${inter.className} text-red-600 text-sm sm:text-lg mb-2`}>{error}</p>
                   <button
                     onClick={fetchEntourage}
-                    className={`${playfair.className} text-[#E6A379] hover:text-[#E6A379]/70 transition-colors underline`}
+                    className={`${playfair.className} text-[#E6A379] hover:text-[#E6A379]/70 transition-colors underline text-sm sm:text-base`}
                   >
                     Try again
                   </button>
                 </div>
               </div>
             ) : entourage.length === 0 ? (
-              <div className="text-center py-24">
-                <Users className="h-16 w-16 text-[#E6A379]/30 mx-auto mb-4" />
-                <p className={`${inter.className} text-[#172822]/70 text-lg`}>
+              <div className="text-center py-12 sm:py-20">
+                <Users className="h-12 w-12 sm:h-16 sm:w-16 text-[#E6A379]/30 mx-auto mb-3 sm:mb-4" />
+                <p className={`${inter.className} text-[#172822]/70 text-sm sm:text-lg`}>
                   The entourage list will be available soon.
                 </p>
               </div>
@@ -296,7 +296,7 @@ export function Entourage() {
                         {renderDivider(categoryIndex)}
                         <TwoColumnLayout singleTitle="The Debutante" centerContent>
                           <div className="col-span-full">
-                            <div className="max-w-sm mx-auto">
+                            <div className="max-w-sm mx-auto px-1.5 sm:px-3">
                               {debutante && <NameItem member={debutante} align="center" showRole />}
                             </div>
                           </div>
@@ -320,11 +320,11 @@ export function Entourage() {
                         <TwoColumnLayout leftTitle="Fathers" rightTitle="Mothers">
                           {Array.from({ length: maxLen }).map((_, idx) => (
                             <React.Fragment key={`parents-row-${idx}`}>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-1" />}
                               </div>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-1" />}
                               </div>
                             </React.Fragment>
                           ))}
@@ -344,18 +344,18 @@ export function Entourage() {
                         <TwoColumnLayout leftTitle="Honored Pair" rightTitle="Her Court">
                           {Array.from({ length: maxLen }).map((_, idx) => (
                             <React.Fragment key={`court-row-${idx}`}>
-                              <div className="px-3 sm:px-4 md:px-6">
+                              <div className="px-1.5 sm:px-3 md:px-5">
                                 {leftMembers[idx] ? (
                                   <NameItem member={leftMembers[idx]} align="right" />
                                 ) : (
-                                  <div className="py-2" />
+                                  <div className="py-1" />
                                 )}
                               </div>
-                              <div className="px-3 sm:px-4 md:px-6">
+                              <div className="px-1.5 sm:px-3 md:px-5">
                                 {rightMembers[idx] ? (
                                   <NameItem member={rightMembers[idx]} align="left" />
                                 ) : (
-                                  <div className="py-2" />
+                                  <div className="py-1" />
                                 )}
                               </div>
                             </React.Fragment>
@@ -377,11 +377,11 @@ export function Entourage() {
                         <TwoColumnLayout leftTitle="Circle A" rightTitle="Circle B">
                           {Array.from({ length: maxLen }).map((_, idx) => (
                             <React.Fragment key={`circle-row-${idx}`}>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-1" />}
                               </div>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-1" />}
                               </div>
                             </React.Fragment>
                           ))}
@@ -402,11 +402,11 @@ export function Entourage() {
                         <TwoColumnLayout leftTitle="Special Sponsors A" rightTitle="Special Sponsors B">
                           {Array.from({ length: maxLen }).map((_, idx) => (
                             <React.Fragment key={`sponsors-row-${idx}`}>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-1" />}
                               </div>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-1" />}
                               </div>
                             </React.Fragment>
                           ))}
@@ -431,7 +431,7 @@ export function Entourage() {
                           if (singleColumn.has(category) || members.length <= 2) {
                             return (
                               <div className="col-span-full">
-                                <div className="max-w-sm mx-auto flex flex-col items-center gap-2.5">
+                                <div className="max-w-sm mx-auto flex flex-col items-center gap-1.5 sm:gap-2">
                                   {members.map((member, idx) => (
                                     <NameItem
                                       key={`${category}-${idx}-${member.Name}`}
@@ -450,11 +450,11 @@ export function Entourage() {
                           const maxLen = Math.max(left.length, right.length)
                           return Array.from({ length: maxLen }).map((_, idx) => (
                             <React.Fragment key={`${category}-row-${idx}`}>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-1" />}
                               </div>
-                              <div className="px-3 sm:px-4 md:px-6">
-                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-2" />}
+                              <div className="px-1.5 sm:px-3 md:px-5">
+                                {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-1" />}
                               </div>
                             </React.Fragment>
                           ))
@@ -471,15 +471,15 @@ export function Entourage() {
                     if (!members || members.length === 0) return null
                     return (
                       <div key={category}>
-                        <div className="flex justify-center py-3 sm:py-4 mb-5 sm:mb-6 md:mb-8">
-                          <div className="h-px w-32 sm:w-48 bg-gradient-to-r from-transparent via-[#E6A379]/20 to-transparent" />
+                        <div className="flex justify-center py-2 sm:py-3 mb-3 sm:mb-5 md:mb-6">
+                          <div className="h-px w-24 sm:w-40 bg-gradient-to-r from-transparent via-[#E6A379]/20 to-transparent" />
                         </div>
                         <TwoColumnLayout singleTitle={category} centerContent>
                           {(() => {
                             if (members.length <= 2) {
                               return (
                                 <div className="col-span-full">
-                                  <div className="max-w-sm mx-auto flex flex-col items-center gap-2.5">
+                                  <div className="max-w-sm mx-auto flex flex-col items-center gap-1.5 sm:gap-2">
                                     {members.map((member, idx) => (
                                       <NameItem
                                         key={`${category}-${idx}-${member.Name}`}
@@ -497,11 +497,11 @@ export function Entourage() {
                             const maxLen = Math.max(left.length, right.length)
                             return Array.from({ length: maxLen }).map((_, idx) => (
                               <React.Fragment key={`${category}-row-${idx}`}>
-                                <div className="px-3 sm:px-4 md:px-6">
-                                  {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-2" />}
+                                <div className="px-1.5 sm:px-3 md:px-5">
+                                  {left[idx] ? <NameItem member={left[idx]} align="right" /> : <div className="py-1" />}
                                 </div>
-                                <div className="px-3 sm:px-4 md:px-6">
-                                  {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-2" />}
+                                <div className="px-1.5 sm:px-3 md:px-5">
+                                  {right[idx] ? <NameItem member={right[idx]} align="left" /> : <div className="py-1" />}
                                 </div>
                               </React.Fragment>
                             ))

@@ -31,7 +31,7 @@ export function PrincipalSponsors() {
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
       <h3
-        className={`${playfair.className} text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#172822] mb-2 sm:mb-3 md:mb-4 ${textAlign} ${className}`}
+        className={`${playfair.className} text-[10px] sm:text-sm md:text-base tracking-[0.4em] sm:tracking-[0.45em] uppercase text-[#172822] mb-1.5 sm:mb-2 md:mb-3 ${textAlign} ${className}`}
       >
         {children}
       </h3>
@@ -44,8 +44,8 @@ export function PrincipalSponsors() {
     const textAlign =
       align === "right" ? "text-right" : align === "left" ? "text-left" : "text-center"
     return (
-      <div className={`flex flex-col ${containerAlign} justify-center py-1.5 sm:py-2 md:py-2.5 w-full`}>
-        <p className={`${inter.className} text-[13px] sm:text-sm md:text-base font-medium text-[#172822] leading-snug break-words ${textAlign}`}>
+      <div className={`flex flex-col ${containerAlign} justify-center py-0.5 sm:py-1.5 md:py-2 w-full`}>
+        <p className={`${inter.className} text-[12px] sm:text-sm md:text-base font-medium text-[#172822] leading-tight sm:leading-snug break-words ${textAlign}`}>
           {name}
         </p>
       </div>
@@ -83,7 +83,7 @@ export function PrincipalSponsors() {
   return (
     <Section
       id="sponsors"
-      className="relative bg-gradient-to-b from-[#172822] via-[#3B553C] to-[#172822] py-16 sm:py-20 md:py-24 lg:py-28 overflow-hidden"
+      className="relative bg-gradient-to-b from-[#172822] via-[#3B553C] to-[#172822] py-8 sm:py-12 md:py-20 lg:py-24 overflow-hidden"
     >
       {/* Ornate pattern background - matching Countdown section */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30">
@@ -182,77 +182,77 @@ export function PrincipalSponsors() {
         />
       </div>
 
-      <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
-        <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
+      <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4">
+        <div className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
           For Mikaella Arkean
         </div>
         <h2
-          className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-4`}
+          className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-2 sm:mt-4`}
         >
           Circle of Principal Sponsors
         </h2>
-        <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-4 leading-relaxed`}>
+        <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-2 sm:mt-4 leading-relaxed px-2`}>
           Honoring the mentors and godparents who steady {debutanteName}&apos;s heart—each blessing, toast, and prayer surrounding her eighteenth celebration with grace.
         </p>
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="relative bg-white border-2 border-[#E6A379]/20 rounded-xl sm:rounded-2xl shadow-[0_25px_80px_rgba(23,40,34,0.45)] overflow-hidden">
-          <div className="absolute inset-[10px] sm:inset-[14px] md:inset-[18px] border-2 border-[#E6A379]/20 rounded-lg sm:rounded-xl pointer-events-none" />
+      <div className="relative z-10 max-w-5xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className="relative bg-white border-2 border-[#E6A379]/20 rounded-lg sm:rounded-2xl shadow-[0_25px_80px_rgba(23,40,34,0.45)] overflow-hidden">
+          <div className="absolute inset-[8px] sm:inset-[14px] md:inset-[18px] border-2 border-[#E6A379]/20 rounded-md sm:rounded-xl pointer-events-none" />
 
-          <div className="relative p-5 sm:p-7 md:p-9 lg:p-12">
+          <div className="relative p-3 sm:p-6 md:p-9 lg:p-12">
             {isLoading ? (
-              <div className="flex items-center justify-center py-24">
-                <div className="flex flex-col items-center gap-4">
-                  <div className="w-12 h-12 border-4 border-[#E6A379]/20 border-t-[#E6A379]/70 rounded-full animate-spin" />
-                  <span className={`${inter.className} text-[#172822]/80 text-lg`}>
+              <div className="flex items-center justify-center py-12 sm:py-20">
+                <div className="flex flex-col items-center gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 border-4 border-[#E6A379]/20 border-t-[#E6A379]/70 rounded-full animate-spin" />
+                  <span className={`${inter.className} text-[#172822]/80 text-sm sm:text-lg`}>
                     Gathering her sponsors…
                   </span>
                 </div>
               </div>
             ) : error ? (
-              <div className="flex items-center justify-center py-24">
+              <div className="flex items-center justify-center py-12 sm:py-20">
                 <div className="text-center">
-                  <p className={`${inter.className} text-red-600 text-lg mb-2`}>{error}</p>
+                  <p className={`${inter.className} text-red-600 text-sm sm:text-lg mb-2`}>{error}</p>
                   <button
                     onClick={fetchSponsors}
-                    className={`${playfair.className} text-[#E6A379] hover:text-[#E6A379]/70 transition-colors underline`}
+                    className={`${playfair.className} text-[#E6A379] hover:text-[#E6A379]/70 transition-colors underline text-sm sm:text-base`}
                   >
                     Try again
                   </button>
                 </div>
               </div>
             ) : sponsorPairs.length === 0 ? (
-              <div className="text-center py-24">
-                <p className={`${inter.className} text-[#172822]/70 text-lg`}>
+              <div className="text-center py-12 sm:py-20">
+                <p className={`${inter.className} text-[#172822]/70 text-sm sm:text-lg`}>
                   Her sponsors will be announced soon.
                 </p>
               </div>
             ) : (
-              <div className="mb-6 sm:mb-8 md:mb-10 lg:mb-12">
-                <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-4 md:gap-x-6 mb-3 sm:mb-4">
-                  <SectionTitle align="right" className="pr-3 sm:pr-4 md:pr-6">
+              <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10">
+                <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-3 md:gap-x-5 mb-2 sm:mb-3">
+                  <SectionTitle align="right" className="pr-2 sm:pr-3 md:pr-5">
                     Gentlemen of Honor
                   </SectionTitle>
-                  <SectionTitle align="left" className="pl-3 sm:pl-4 md:pl-6">
+                  <SectionTitle align="left" className="pl-2 sm:pl-3 md:pl-5">
                     Ladies of Grace
                   </SectionTitle>
                 </div>
-                <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-2 sm:gap-x-4 md:gap-x-6 gap-y-2 sm:gap-y-3 md:gap-y-4 items-stretch">
+                <div className="grid grid-cols-1 min-[350px]:grid-cols-2 gap-x-1.5 sm:gap-x-3 md:gap-x-5 gap-y-1 sm:gap-y-2 md:gap-y-3 items-stretch">
                   {sponsorPairs.map((pair, idx) => (
                     <React.Fragment key={`pair-${idx}`}>
-                      <div className="px-3 sm:px-4 md:px-6">
+                      <div className="px-1.5 sm:px-3 md:px-5">
                         {pair.MalePrincipalSponsor ? (
                           <NameItem name={pair.MalePrincipalSponsor} align="right" />
                         ) : (
-                          <div className="py-2" />
+                          <div className="py-1" />
                         )}
                       </div>
-                      <div className="px-3 sm:px-4 md:px-6">
+                      <div className="px-1.5 sm:px-3 md:px-5">
                         {pair.FemalePrincipalSponsor ? (
                           <NameItem name={pair.FemalePrincipalSponsor} align="left" />
                         ) : (
-                          <div className="py-2" />
+                          <div className="py-1" />
                         )}
                       </div>
                     </React.Fragment>

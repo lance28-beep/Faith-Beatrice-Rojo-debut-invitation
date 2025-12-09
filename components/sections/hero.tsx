@@ -6,17 +6,19 @@ import { siteConfig } from "@/content/site"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const desktopImages = [
+  "/desktop-background/debut (16).jpg",
+  "/desktop-background/debut (28).jpg",
   "/desktop-background/debut 1.jpg",
   "/desktop-background/debut 2.jpg",
   "/desktop-background/debut 3.jpg",
 ]
 
 const mobileImages = [
-  "/desktop-background/debut (69).jpg",
-  "/desktop-background/debut (90).jpg",
-  "/desktop-background/debut (111).jpg",
-  "/desktop-background/debut (180).jpg",
-  "/desktop-background/debut (202).jpg",
+  "/mobile-background/debut (14).jpg",
+  "/mobile-background/debut (34).jpg",
+  "/mobile-background/debut (20).jpg",
+  "/mobile-background/debut (23).jpg",
+  "/mobile-background/debut (22).jpg",
   "/mobile-background/debut 1.jpg",
   "/mobile-background/debut 2.jpg",
   "/mobile-background/debut 3.jpg",

@@ -71,9 +71,9 @@ const faqItems: FAQItem[] = [
       "Please update your RSVP as soon as possible if your plans change. You can search for your name in the RSVP section and update your response. We appreciate your timely communication!",
   },
   {
-    question: "What happens during the 18 Candles and 18 Treasures ceremony?",
+    question: "What is the 18 Candles and 18 Treasures ceremony ?",
     answer:
-      `After the formal program, ${debutanteNickname} will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this enchanted evening.`,
+      `During the 18 Candles and 18 Treasures ceremony, ${debutanteNickname} will light 18 candles and receive 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this enchanted evening.`,
   },
   {
     question: "What time does the celebration end?",

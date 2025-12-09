@@ -22,16 +22,16 @@ const inter = Inter({
 })
 
 const galleryItems = [
-  { image: "/desktop-background/debut 1.jpg", text: "Mikaella • Enchanted Moments" },
-  { image: "/desktop-background/debut (112).jpg", text: "Mikaella • Magical Elegance" },
-  { image: "/desktop-background/debut (100).jpg", text: "Mikaella • Timeless Beauty" },
-  { image: "/desktop-background/debut (60).jpg", text: "Mikaella • Enchanted Beauty" },
-  { image: "/desktop-background/debut (14).jpg", text: "Mikaella • Enchanted Beauty" },
-  { image: "/desktop-background/debut (2).jpg", text: "Mikaella • Enchanted Beauty" },
-  { image: "/desktop-background/debut (239).jpg", text: "Mikaella • Enchanted Beauty" },
-  { image: "/desktop-background/debut (185).jpg", text: "Mikaella • Enchanted Beauty" },
-  { image: "/desktop-background/debut (53).jpg", text: "Mikaella • Enchanted Beauty" },
-  { image: "/desktop-background/debut (223).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (4).jpg", text: "Mikaella • Enchanted Moments" },
+  { image: "/mobile-background/debut (9).jpg", text: "Mikaella • Magical Elegance" },
+  { image: "/mobile-background/debut (15).jpg", text: "Mikaella • Timeless Beauty" },
+  { image: "/mobile-background/debut (18).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (21).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (22).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (25).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (26).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (29).jpg", text: "Mikaella • Enchanted Beauty" },
+  { image: "/mobile-background/debut (31).jpg", text: "Mikaella • Enchanted Beauty" },
 ]
 
 const tileLayouts = [
