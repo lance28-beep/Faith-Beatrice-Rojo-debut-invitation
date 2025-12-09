@@ -168,21 +168,21 @@ export function SnapShare() {
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/desktop-background/debut (2).jpg" alt="Debut moment 1" fill className="object-cover" />
+                    <Image src="/mobile-background/debut (5).jpg" alt="Debut moment 1" fill className="object-cover" />
                   </motion.div>
                   <motion.div
                     className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#172822]/20 hover:border-[#172822]/40 transition-all"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/desktop-background/debut (17).jpg" alt="Debut moment 2" fill className="object-cover" />
+                    <Image src="/mobile-background/debut (2).jpg" alt="Debut moment 2" fill className="object-cover" />
                   </motion.div>
                   <motion.div
                     className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md border-2 border-[#172822]/20 hover:border-[#172822]/40 transition-all"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.25 }}
                   >
-                    <Image src="/desktop-background/debut (86).jpg" alt="Debut moment 3" fill className="object-cover" />
+                    <Image src="/desktop-background/debut (28).jpg" alt="Debut moment 3" fill className="object-cover" />
                   </motion.div>
                 </div>
                 <p className={`${inter.className} text-[#172822]/70 text-[10px] sm:text-xs text-center mt-4 px-1.5`}>

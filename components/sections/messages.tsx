@@ -248,9 +248,9 @@ export function Messages() {
   const [messages, setMessages] = useState<Message[]>([])
   const [loading, setLoading] = useState(false)
   const portraitImages = [
-    "/desktop-background/debut 1.jpg",
-    "/desktop-background/debut 2.jpg",
-    "/desktop-background/debut 3.jpg",
+    "/mobile-background/debut (1).jpg",
+    "/mobile-background/debut (2).jpg",
+    "/mobile-background/debut (3).jpg",
   ]
   const [portraitIndex, setPortraitIndex] = useState(0)
 
