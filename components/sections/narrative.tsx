@@ -36,45 +36,45 @@ const TAB_CONTENT: Record<
   }
 > = {
   about: {
-    headline: "The Enchanted Story",
-    blurb: "Like the turning of a page in a fairytale",
+    headline: "The Nature's Story",
+    blurb: "Like the blooming of a flower in nature's garden",
     paragraphs: [
-      "Like the turning of a page in a fairytale, the time has come for Mikaella to step into a new chapter of her life. You are cordially invited to an enchanted celebration as we mark her 18th birthday in the most magical way.",
-      "In the spirit of magic and wonder, we invite you to witness Mikaella's transformation into the young woman she has always been destined to become. The evening will be filled with mystical moments, fairy-tale elegance, and the kind of charm that only an enchanted evening can bring.",
-      "This debut marks the moment when Mikaella begins her journey into adulthood, and we would be honored to have you share in this extraordinary celebration.",
+      `Like the blooming of a flower in nature's garden, the time has come for ${siteConfig.couple.brideNickname} to step into a new chapter of her life. You are cordially invited to a nature's celebration as we mark her 18th birthday in the most natural way.`,
+      `In the spirit of growth and wonder, we invite you to witness ${siteConfig.couple.brideNickname}'s transformation into the young woman she has always been destined to become. The evening will be filled with organic moments, garden elegance, and the kind of beauty that only a nature's evening can bring.`,
+      `This debut marks the moment when ${siteConfig.couple.brideNickname} begins her journey into adulthood, and we would be honored to have you share in this extraordinary celebration.`,
     ],
     highlights: [
-      "An enchanted evening of transformation",
-      "Mystical moments and fairy-tale elegance",
-      "A magical celebration of womanhood",
+      "A nature's evening of transformation",
+      "Organic moments and garden elegance",
+      "A natural celebration of womanhood",
     ],
   },
   dreams: {
-    headline: "The Magic of New Beginnings",
-    blurb: "Stepping into a world of wonder and possibility",
+    headline: "The Beauty of New Beginnings",
+    blurb: "Stepping into a world of growth and possibility",
     paragraphs: [
-      "As Mikaella steps into this new chapter, she carries with her the dreams of a young woman ready to embrace all that life has to offer. This enchanted evening marks not just a birthday, but the beginning of a journey filled with endless possibilities.",
-      "The magic of this night will create memories that will last a lifetime, as we celebrate the beautiful transformation from girl to woman. Every moment will be touched with the wonder and elegance that only an enchanted celebration can bring.",
-      "We invite you to be part of this magical moment, to share in the joy and wonder as Mikaella begins her journey into adulthood.",
+      `As ${siteConfig.couple.brideNickname} steps into this new chapter, she carries with her the dreams of a young woman ready to embrace all that life has to offer. This nature's evening marks not just a birthday, but the beginning of a journey filled with endless possibilities.`,
+      "The beauty of this night will create memories that will last a lifetime, as we celebrate the beautiful transformation from girl to woman. Every moment will be touched with the wonder and elegance that only a nature's celebration can bring.",
+      `We invite you to be part of this natural moment, to share in the joy and wonder as ${siteConfig.couple.brideNickname} begins her journey into adulthood.`,
     ],
     highlights: [
       "A celebration of transformation and growth",
       "Memories that will last a lifetime",
-      "An evening filled with magic and wonder",
+      "An evening filled with nature and wonder",
     ],
   },
   bio: {
-    headline: "An Enchanted Journey",
+    headline: "A Nature's Journey",
     blurb: "From dreams to reality, with grace and elegance",
     paragraphs: [
-      "Mikaella's journey has been one of grace, determination, and the kind of magic that comes from believing in oneself. As she turns 18, she steps into a new world filled with opportunities, dreams, and the promise of a bright future.",
-      "This enchanted evening is a celebration of all that she is and all that she will become. It's a moment to honor the past, celebrate the present, and look forward to the future with hope and excitement.",
-      "Come and be part of the magic as we celebrate this special milestone in Mikaella's life. Your presence will make this night even more special as we step into a world of wonder and create memories that will last forever.",
+      `${siteConfig.couple.brideNickname}'s journey has been one of grace, determination, and the kind of growth that comes from believing in oneself. As she turns 18, she steps into a new world filled with opportunities, dreams, and the promise of a bright future.`,
+      "This nature's evening is a celebration of all that she is and all that she will become. It's a moment to honor the past, celebrate the present, and look forward to the future with hope and excitement.",
+      `Come and be part of the beauty as we celebrate this special milestone in ${siteConfig.couple.brideNickname}'s life. Your presence will make this night even more special as we step into a world of wonder and create memories that will last forever.`,
     ],
     highlights: [
       "A journey of grace and determination",
       "Celebrating past, present, and future",
-      "Creating magical memories together",
+      "Creating natural memories together",
     ],
   },
 }
@@ -219,7 +219,7 @@ export function Narrative() {
           transition={{ duration: 0.6 }}
         >
           <p className="text-[10px] sm:text-xs md:text-sm tracking-[0.35em] sm:tracking-[0.4em] uppercase text-[#E9D3A4]/80 mb-2 sm:mb-3 md:mb-4">
-            The Enchanted Story
+            The Nature's Story
           </p>
           <h2
             className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white leading-tight drop-shadow-[0_8px_24px_rgba(23,40,34,0.6)]`}
@@ -227,7 +227,7 @@ export function Narrative() {
             My Journey to 18
           </h2>
           <p className={`${inter.className} text-sm sm:text-base md:text-lg lg:text-xl text-[#E9D3A4]/90 mt-2 sm:mt-3 md:mt-4 tracking-[0.06em] sm:tracking-[0.08em] px-2`}>
-            An enchanted evening filled with mystical moments and fairy-tale elegance.
+            A nature's evening filled with organic moments and garden elegance.
           </p>
         </motion.div>
 

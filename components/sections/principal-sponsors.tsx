@@ -4,6 +4,7 @@ import React from "react"
 import { useEffect, useMemo, useState } from "react"
 import { Section } from "@/components/section"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { siteConfig } from "@/content/site"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
@@ -15,7 +16,7 @@ interface PrincipalSponsor {
   FemalePrincipalSponsor: string
 }
 
-const debutanteName = "Mikaella Arkean"
+const debutanteName = siteConfig.couple.bride
 
 export function PrincipalSponsors() {
   const SectionTitle = ({
@@ -184,7 +185,7 @@ export function PrincipalSponsors() {
 
       <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-white/15 bg-white/10 px-3 py-1 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
-          For Mikaella Arkean
+          For {debutanteName}
         </div>
         <h2
           className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-2 sm:mt-4`}

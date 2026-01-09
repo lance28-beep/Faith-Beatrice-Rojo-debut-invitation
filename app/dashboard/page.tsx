@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/content/site"
 import {
   Lock,
   Users,
@@ -886,7 +887,7 @@ export default function DashboardPage() {
                 Enter password to access
               </p>
               <div className="text-sm font-medium text-[#172822] font-sans">
-              Mikaella Arkean | 18th Birthday Debut
+              {siteConfig.couple.bride} | 18th Birthday Debut
               </div>
             </div>
 

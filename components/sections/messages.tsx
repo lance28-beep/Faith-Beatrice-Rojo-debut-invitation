@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button"
 import { useToast } from "@/hooks/use-toast"
 import MessageWallDisplay from "./message-wall-display"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -109,13 +110,13 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
         <CardContent className="relative p-3.5 sm:p-6 lg:p-8">
           <div className="text-center mb-3.5 sm:mb-7 space-y-1.5 sm:space-y-2.5">
             <p className="text-[9px] sm:text-xs tracking-[0.45em] sm:tracking-[0.55em] uppercase text-[#172822]/70">
-              Notes For Mikaella Arkean
+              Notes For {siteConfig.couple.bride}
             </p>
             <h3 className={`${greatVibes.className} text-2xl sm:text-4xl text-[#172822]`}>
-              Whisper An Enchanted Wish
+              Whisper A Nature's Wish
             </h3>
             <p className={`${inter.className} text-[10px] sm:text-xs text-[#172822]/70 tracking-[0.18em] sm:tracking-[0.22em] uppercase leading-relaxed`}>
-              Every line becomes part of Mikaella Arkean&apos;s story
+              Every line becomes part of {siteConfig.couple.bride}&apos;s story
             </p>
             <div className="flex justify-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] uppercase tracking-[0.3em] sm:tracking-[0.35em] text-[#172822]/55">
               <span>Share</span>
@@ -169,7 +170,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   <span className={`flex h-4 w-4 sm:h-5 sm:w-5 items-center justify-center rounded-full border border-[#172822]/30 transition-transform ${focusedField === "message" ? "scale-110 bg-[#172822]/10" : ""}`}>
                     <Heart className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-[#172822]/65" />
                   </span>
-                  <span className="hidden sm:inline">Letter For Mikaella Arkean</span>
+                  <span className="hidden sm:inline">Letter For {siteConfig.couple.bride}</span>
                   <span className="inline sm:hidden">Message</span>
                 </label>
                 {messageValue && (
@@ -194,7 +195,7 @@ function MessageForm({ onSuccess, onMessageSent }: MessageFormProps) {
                   }}
                   onFocus={() => setFocusedField("message")}
                   onBlur={() => setFocusedField(null)}
-                  placeholder="Tell Mikaella Arkean what you wish for her eighteenth chapter..."
+                  placeholder={`Tell ${siteConfig.couple.bride} what you wish for her eighteenth chapter...`}
                   className={`w-full border border-[#E6A379]/60 rounded-[18px] sm:rounded-[26px] min-h-[90px] sm:min-h-[130px] text-xs sm:text-sm ${inter.className} text-[#172822] placeholder:text-[#172822]/55 transition-all duration-300 resize-none bg-white/90 backdrop-blur-sm shadow-[0_8px_20px_rgba(23,40,34,0.1)] hover:shadow-[0_12px_28px_rgba(23,40,34,0.18)] focus:shadow-[0_16px_36px_rgba(23,40,34,0.24)] py-2.5 sm:py-4 px-3 sm:px-5 ${
                     focusedField === "message"
                       ? "border-[#E6A379]/60 focus:border-[#E6A379]/70 focus:ring-2 sm:focus:ring-4 focus:ring-[#E6A379]/15"
@@ -251,6 +252,9 @@ export function Messages() {
     "/mobile-background/debut (1).jpg",
     "/mobile-background/debut (2).jpg",
     "/mobile-background/debut (3).jpg",
+    "/mobile-background/debut (4).jpg",
+    "/mobile-background/debut (5).jpg",
+    "/mobile-background/debut (6).jpg",
   ]
   const [portraitIndex, setPortraitIndex] = useState(0)
 
@@ -299,18 +303,18 @@ export function Messages() {
         {/* Header Section */}
         <div className="text-center mb-10 sm:mb-14 lg:mb-18 px-2">
           <p className={`${inter.className} text-[10px] sm:text-xs tracking-[0.55em] uppercase text-[#E9D3A4]/80 mb-3`}>
-            Words Mikaella Arkean Will Keep Forever
+            Words {siteConfig.couple.bride} Will Keep Forever
           </p>
           <h2
             className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white mb-4 drop-shadow-[0_8px_24px_rgba(23,40,34,0.6)]`}
           >
-            Letters for Mikaella Arkean
+            Letters for {siteConfig.couple.bride}
           </h2>
           <h3 className={`${playfair.className} text-lg sm:text-xl lg:text-2xl text-[#E9D3A4]/90 mb-3`}>
             Pen a wish for her eighteenth chapter
           </h3>
           <p className={`${inter.className} text-xs sm:text-sm lg:text-base text-[#E9D3A4]/80 leading-relaxed tracking-[0.2em] max-w-2xl mx-auto px-4`}>
-            Send a note woven in golden light and enchanted beauty—a keepsake Mikaella Arkean will treasure long after the celebration ends.
+            Send a note woven in golden light and nature's beauty—a keepsake {siteConfig.couple.bride} will treasure long after the celebration ends.
           </p>
         </div>
 
@@ -325,15 +329,15 @@ export function Messages() {
                     <Image
                       key={portraitImages[portraitIndex]}
                       src={portraitImages[portraitIndex]}
-                      alt="Portrait of Mikaella Arkean"
+                      alt={`Portrait of ${siteConfig.couple.bride}`}
                       fill
                       className="object-cover transition-opacity duration-700"
                       priority={false}
                     />
                   </div>
                   <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-center text-[#1F1F1F]">
-                    <p className={`${greatVibes.className} text-3xl tracking-wide text-[#1F1F1F]`}>Mikaella Arkean</p>
-                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase text-[#1F1F1F]/85`}>Eighteen in Enchanted Elegance</p>
+                    <p className={`${greatVibes.className} text-3xl tracking-wide text-[#1F1F1F]`}>{siteConfig.couple.bride}</p>
+                    <p className={`${inter.className} text-[10px] tracking-[0.5em] uppercase text-[#1F1F1F]/85`}>Eighteen in Nature's Elegance</p>
                   </div>
                 </div>
                 <div className="relative py-4 sm:py-8 lg:py-10 px-2 sm:px-6 lg:px-8">
@@ -356,7 +360,7 @@ export function Messages() {
               Keepsakes From Her Constellation
             </h3>
             <p className="text-sm sm:text-base lg:text-lg text-[#E9D3A4]/80 font-lora max-w-2xl mx-auto leading-relaxed">
-              Scroll through the sparkling words that loved ones have tucked into Mikaella Arkean&apos;s debut album of memories.
+              Scroll through the sparkling words that loved ones have tucked into {siteConfig.couple.bride}&apos;s debut album of memories.
             </p>
           </div>
           

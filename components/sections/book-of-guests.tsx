@@ -24,8 +24,8 @@ export function BookOfGuests() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [totalGuests, setTotalGuests] = useState(0)
-  const debutanteName = "Mikaella Arkean"
-  const debutanteFirstName = debutanteName.split(" ")[0]
+  const debutanteName = siteConfig.couple.bride
+  const debutanteFirstName = siteConfig.couple.brideNickname
 
   const getInitials = (name: string) => {
     if (!name) return "?"
@@ -195,11 +195,11 @@ export function BookOfGuests() {
           <h2
             className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(23,40,34,0.8)]`}
           >
-            Enchanted Signatures of Love
+            Nature's Signatures of Love
           </h2>
           <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto leading-relaxed`}>
             Every RSVP is a shimmer on {debutanteName}'s runway to eighteen—thank you for adding your light to
-            this magical, enchanted celebration.
+            this natural, nature's celebration.
           </p>
         </div>
 
@@ -233,12 +233,12 @@ export function BookOfGuests() {
                   </div>
                   <div className="inline-flex items-center justify-start sm:justify-end gap-1 text-[8px] sm:text-xs tracking-[0.32em] uppercase text-[#172822]/75">
                     <Sparkles className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#E6A379]" />
-                    <span>Enchanted lights await you</span>
+                    <span>Nature's lights await you</span>
                   </div>
                 </div>
               </div>
               <p className={`${inter.className} text-[10px] sm:text-sm md:text-base text-[#172822]/85 leading-relaxed max-w-3xl`}>
-                Kindly keep your RSVP up to date so we can seat you with grace and welcome you into this enchanted celebration the moment you arrive.
+                Kindly keep your RSVP up to date so we can seat you with grace and welcome you into this nature's celebration the moment you arrive.
               </p>
             </div>
           </div>

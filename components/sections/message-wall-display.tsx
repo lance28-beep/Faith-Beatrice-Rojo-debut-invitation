@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Heart, MessageCircle, Sparkles } from "lucide-react"
 import { useState, useEffect } from "react"
+import { siteConfig } from "@/content/site"
 
 interface Message {
   timestamp: string
@@ -16,8 +17,8 @@ interface MessageWallDisplayProps {
   loading: boolean
 }
 
-const debutanteName = "Mikaella Arkean"
-const debutanteNickname = debutanteName.split(" ")[0]
+const debutanteName = siteConfig.couple.bride
+const debutanteNickname = siteConfig.couple.brideNickname
 
 export default function MessageWallDisplay({ messages, loading }: MessageWallDisplayProps) {
   const [visibleMessages, setVisibleMessages] = useState<Message[]>([])
@@ -68,15 +69,15 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           </div>
         </div>
         <h3 className="text-xl sm:text-2xl lg:text-3xl font-playfair font-bold text-white mb-3 sm:mb-4">
-          No Enchanted Wishes Yet
+          No Nature's Wishes Yet
         </h3>
         <p className="text-sm sm:text-base lg:text-lg text-[#E9D3A4]/85 font-lora max-w-md mx-auto leading-relaxed">
-          Be the first to pen a wish for {debutanteNickname}'s eighteenth celebration—your message will shine here in golden light and enchanted beauty.
+          Be the first to pen a wish for {debutanteNickname}'s eighteenth celebration—your message will shine here in golden light and nature's beauty.
         </p>
         <div className="mt-6 sm:mt-8 flex justify-center">
           <div className="flex items-center gap-2 text-[#E9D3A4]/80">
             <Sparkles className="h-4 w-4 animate-pulse text-[#E9D3A4]" />
-            <span className="text-xs sm:text-sm font-lora text-[#E9D3A4] tracking-[0.28em] uppercase">Her enchanted keepsake awaits</span>
+            <span className="text-xs sm:text-sm font-lora text-[#E9D3A4] tracking-[0.28em] uppercase">Her nature's keepsake awaits</span>
             <Sparkles className="h-4 w-4 animate-pulse text-[#E9D3A4]" />
           </div>
         </div>
@@ -153,11 +154,11 @@ export default function MessageWallDisplay({ messages, loading }: MessageWallDis
           <div className="absolute inset-0 bg-gradient-to-br from-[#E6A379]/15 via-white/60 to-[#E6A379]/10 opacity-100" />
           <div className="absolute inset-0 bg-gradient-to-t from-[#172822]/5 via-transparent to-transparent" />
           <p className="relative text-xs sm:text-sm font-lora text-[#172822] leading-relaxed max-w-md font-medium">
-            Have a memory, blessing, or enchanted wish for {debutanteNickname}? Add your letter above and let her feel your love on this magical evening.
+            Have a memory, blessing, or nature's wish for {debutanteNickname}? Add your letter above and let her feel your love on this natural evening.
           </p>
           <div className="relative inline-flex items-center gap-2 text-[#172822] text-[10px] sm:text-xs tracking-[0.38em] uppercase font-semibold">
             <Sparkles className="h-4 w-4 animate-pulse text-[#E6A379]" />
-            <span>Pen your enchanted wish</span>
+            <span>Pen your nature's wish</span>
             <Sparkles className="h-4 w-4 animate-pulse text-[#E6A379]" />
           </div>
         </div>

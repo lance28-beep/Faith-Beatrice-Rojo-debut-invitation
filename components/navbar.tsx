@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useRef } from "react"
 import Link from "next/link"
 import { Sparkles } from "lucide-react"
+import { siteConfig } from "@/content/site"
 import StaggeredMenu from "./StaggeredMenu"
 
 const navLinks = [
@@ -112,7 +113,7 @@ export function Navbar() {
                   style={{ letterSpacing: "0.08em" }}
                 >
                   <span className="relative inline-block">
-                    Mikaella Arkean
+                    {siteConfig.couple.bride}
                     {/* Sparkle effects around the text */}
                     <Sparkles 
                       size={8} 

@@ -4,6 +4,7 @@ import { Section } from "@/components/section"
 import { Heart, Sparkles, BookOpen, Palette, Shirt, Footprints } from "lucide-react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -26,7 +27,7 @@ const bookTitles = [
 ]
 
 export function Registry() {
-  const debutanteName = "Mikaella Arkean"
+  const debutanteName = siteConfig.couple.bride
 
   return (
     <Section
@@ -52,7 +53,7 @@ export function Registry() {
         <h2
           className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(23,40,34,0.75)] mt-3 sm:mt-4`}
         >
-          Enchanted Tokens of Love
+          Nature's Tokens of Love
         </h2>
         <p
           className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-3 leading-relaxed`}
@@ -69,7 +70,7 @@ export function Registry() {
               <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-[#E6A379]/20 bg-[#E6A379]/10 px-2.5 py-1 text-[10px] sm:text-sm shadow-[0_12px_30px_rgba(23,40,34,0.18)]">
                 <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#E6A379]" />
                 <span className={`${playfair.className} text-[12px] sm:text-base text-[#E6A379]`}>
-                  An Enchanted Note for Our Guests
+                  A Nature's Note for Our Guests
                 </span>
                 <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#E6A379]" />
               </div>
@@ -177,7 +178,7 @@ export function Registry() {
             </div>
 
             <p className={`${inter.className} text-[10px] sm:text-base text-[#172822]/85 text-center pt-4 sm:pt-6`}>
-              With enchanted gratitude, {debutanteName} & family
+              With nature's gratitude, {debutanteName} & family
             </p>
           </div>
         </div>

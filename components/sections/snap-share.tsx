@@ -1,7 +1,6 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 import { motion } from "motion/react"
 import { Instagram, Facebook, Twitter, Share2, Copy, Check, Download } from "lucide-react"
 import { Section } from "@/components/section"
@@ -18,18 +17,17 @@ export function SnapShare() {
   const [isMobile, setIsMobile] = useState(false)
 
   const websiteUrl = typeof window !== "undefined" ? window.location.href : "https://example.com"
-  const driveLink = "https://drive.google.com/drive/folders/16wsIFVQJWeUlMVO63xBAm7Pcmzdqsql2?usp=sharing"
-  const debutanteFullName = siteConfig.couple.bride
+  const driveLink = "https://drive.google.com/drive/folders/1yiMLxyqKSs7-b1rZf_FcA_sG_Tdle8_Z?usp=sharing"
   const debutanteNickname = siteConfig.couple.brideNickname
   const sanitizedTagName = debutanteNickname.replace(/\s+/g, "")
 
   const hashtags = [
-    "#MikasChapter18",
+    `#${sanitizedTagName}sChapter18`,
     `#${sanitizedTagName}Debut2026`,
-    "#EnchantedEvening",
-    "#FlorestaEncantada",
+    "#NaturesEvening",
+    "#FlorestaNatural",
   ]
-  const shareText = `Celebrate ${debutanteNickname}'s enchanted debut! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
+  const shareText = `Celebrate ${debutanteNickname}'s nature's debut! Explore the details and share your special memories: ${websiteUrl} ${hashtags.join(" ")} ✨`
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 640)
@@ -113,8 +111,8 @@ export function SnapShare() {
             Capture & Share the Celebration
           </h2>
           <p className={`${inter.className} text-[10px] sm:text-sm md:text-base text-white/85 max-w-2xl mx-auto mt-3 sm:mt-4 leading-relaxed px-2`}>
-            Capture the enchanted magic of {debutanteNickname}'s debut. Share your favorite moments so her keepsake gallery glows with every
-            smile, twirl, and toast from the evening. Tag photos with #MikasChapter18 to share the magic.
+            Capture the nature's beauty of {debutanteNickname}'s debut. Share your favorite moments so her keepsake gallery glows with every
+            smile, twirl, and toast from the evening. Tag photos with #{sanitizedTagName}sChapter18 to share the magic.
           </p>
           <div className="mx-auto mt-5 h-px w-24 bg-gradient-to-r from-transparent via-white/60 to-transparent" />
         </motion.div>
@@ -132,7 +130,7 @@ export function SnapShare() {
                   Share Your Moments
                 </h3>
                 <p className={`${inter.className} text-[#172822]/80 text-[11px] sm:text-sm mb-4 sm:mb-5 leading-relaxed px-1`}>
-                  Every snapshot keeps {debutanteNickname}'s story glowing. Use these hashtags to weave your memories into her enchanted keepsake.
+                  Every snapshot keeps {debutanteNickname}'s story glowing. Use these hashtags to weave your memories into her nature's keepsake.
                 </p>
                 <div className="space-y-2 mb-4">
                   {hashtags.map((hashtag) => (
@@ -157,38 +155,6 @@ export function SnapShare() {
                   Click to copy and paste into your posts, stories, and reels.
                 </p>
               </div>
-
-              <div className="mt-auto">
-                <h4 className={`${playfair.className} text-[13px] sm:text-lg md:text-xl font-semibold text-[#172822] mb-3 text-center`}>
-                  A Glimpse of Her Celebration
-                </h4>
-                <div className="grid grid-cols-2 gap-1.5 sm:gap-3 md:gap-4">
-                  <motion.div
-                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#172822]/20 hover:border-[#172822]/40 transition-all"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/mobile-background/debut (5).jpg" alt="Debut moment 1" fill className="object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="relative aspect-square rounded-xl overflow-hidden shadow-md border-2 border-[#172822]/20 hover:border-[#172822]/40 transition-all"
-                    whileHover={{ scale: 1.03 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/mobile-background/debut (2).jpg" alt="Debut moment 2" fill className="object-cover" />
-                  </motion.div>
-                  <motion.div
-                    className="relative col-span-2 aspect-[3/2] rounded-xl overflow-hidden shadow-md border-2 border-[#172822]/20 hover:border-[#172822]/40 transition-all"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.25 }}
-                  >
-                    <Image src="/desktop-background/debut (28).jpg" alt="Debut moment 3" fill className="object-cover" />
-                  </motion.div>
-                </div>
-                <p className={`${inter.className} text-[#172822]/70 text-[10px] sm:text-xs text-center mt-4 px-1.5`}>
-                  Tag your snapshots with our hashtags to be featured in {debutanteNickname}'s keepsake gallery.
-                </p>
-              </div>
             </div>
           </motion.div>
 
@@ -199,7 +165,7 @@ export function SnapShare() {
                   Share Her Debut Website
                 </h4>
                 <p className={`${inter.className} text-[#172822]/80 text-[11px] sm:text-sm mb-4 sm:mb-5 leading-relaxed px-1`}>
-                  Spread the word about {debutanteNickname}'s enchanted debut celebration. Share this QR code with friends and family so they can join the celebration.
+                  Spread the word about {debutanteNickname}'s nature's debut celebration. Share this QR code with friends and family so they can join the celebration.
                 </p>
                 <div className="mx-auto inline-flex flex-col items-center bg-[#E9D3A4]/20 p-3 sm:p-6 md:p-7 rounded-2xl shadow-md border border-[#7E8A58]/20 mb-4 flex-1 justify-center">
                   <div className="mb-3 p-2 sm:p-4 rounded-xl bg-white border border-[#7E8A58]/15">
@@ -313,7 +279,7 @@ export function SnapShare() {
               that will last a lifetime—keep sharing the joy throughout the evening.
             </p>
             <div className={`${inter.className} flex items-center justify-center gap-2 text-white text-[10px] sm:text-xs tracking-[0.32em] uppercase`}>
-              <span>See you in the enchanted evening</span>
+              <span>See you in the nature's evening</span>
             </div>
           </div>
         </motion.div>

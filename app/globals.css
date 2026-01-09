@@ -57,7 +57,7 @@
   --primary-foreground: oklch(0.985 0 0);
   --secondary: #3B553C;
   --secondary-foreground: oklch(0.985 0 0);
-  /* Enchanted forest accent for dark mode */
+  /* Nature's garden accent for dark mode */
   --lavender: #7E8A58;
   --muted: #E9D3A4;
   --muted-foreground: #172822;
@@ -151,7 +151,7 @@ html {
   background: #f1f1f1;
 }
 
-/* Updated scrollbar color to enchanted theme */
+/* Updated scrollbar color to nature's theme */
 ::-webkit-scrollbar-thumb {
   background: #7E8A58;
   border-radius: 4px;

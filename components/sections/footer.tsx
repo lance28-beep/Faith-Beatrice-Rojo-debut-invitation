@@ -17,7 +17,7 @@ export function Footer() {
 
   const quotes = [
     "Come and Be Part of the Magic!",
-    "We can't wait to celebrate this enchanted moment with you.",
+    "We can't wait to celebrate this nature's moment with you.",
     "Your presence will make this night even more special as we step into a world of wonder and create memories that will last a lifetime."
   ]
 
@@ -232,7 +232,7 @@ export function Footer() {
                   className="fleur-de-leah-regular text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white drop-shadow-[0_6px_18px_rgba(23,40,34,0.65)]"
                   style={{ letterSpacing: "0.08em" }}
                 >
-                  Mikaella Arkean 18
+                  {siteConfig.couple.bride} 18
                 </h3>
               </div>
               <div className="space-y-2 sm:space-y-3 md:space-y-4">
@@ -286,7 +286,7 @@ export function Footer() {
                 <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-[#172822]/10 rounded-full flex items-center justify-center border-2 border-[#172822]/20 flex-shrink-0">
                   <Sparkles className="w-4 h-4 sm:w-4.5 sm:h-4.5 md:w-5 md:h-5 text-[#172822]" />
                 </div>
-                <h4 className={`${playfair.className} font-bold text-base sm:text-lg md:text-xl text-[#172822]`}>Enchanted Evening</h4>
+                <h4 className={`${playfair.className} font-bold text-base sm:text-lg md:text-xl text-[#172822]`}>Nature's Evening</h4>
               </div>
               <div className={`space-y-2 sm:space-y-2.5 md:space-y-3 ${inter.className} text-[#172822]/80 text-xs sm:text-sm`}>
                 <div className="flex items-center gap-2 sm:gap-3">
@@ -352,28 +352,11 @@ export function Footer() {
           </motion.div>
         </motion.div>
 
-        {/* Signatories Section */}
-        <motion.div className="border-t border-white/20 pt-4 sm:pt-6 md:pt-8 mb-4 sm:mb-6 md:mb-8" variants={fadeInUp}>
-          <div className="text-center space-y-2 sm:space-y-3 md:space-y-4">
-            <p className={`text-white/90 ${inter.className} text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto px-2`}>
-              Come and Be Part of the Magic!
-            </p>
-            <p className={`text-white/85 ${inter.className} text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl mx-auto px-2`}>
-              We can&apos;t wait to celebrate this enchanted moment with you. Your presence will make this night even more special as we step into a world of wonder and create memories that will last a lifetime.
-            </p>
-            <div className="mt-3 sm:mt-4 md:mt-6 space-y-1 sm:space-y-1.5 md:space-y-2">
-              <p className={`text-white/90 ${greatVibes.className} text-base sm:text-lg md:text-xl lg:text-2xl`}>Mark Denver B. De Castro</p>
-              <p className={`text-white/90 ${greatVibes.className} text-base sm:text-lg md:text-xl lg:text-2xl`}>Jean Leslie B. De Castro</p>
-              <p className={`text-white/90 ${greatVibes.className} text-base sm:text-lg md:text-xl lg:text-2xl`}>Mikaella Arkean B. De Castro</p>
-            </div>
-          </div>
-        </motion.div>
-
         {/* Bottom Row */}
         <motion.div className="border-t border-white/20 pt-4 sm:pt-6 md:pt-8" variants={fadeInUp}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 md:gap-6">
             <div className="text-center md:text-left">
-              <p className={`text-white/85 ${inter.className} text-[10px] sm:text-xs md:text-sm`}>© {year} Mikaella Arkean B. De Castro. Crafted with love for her debut story.</p>
+              <p className={`text-white/85 ${inter.className} text-[10px] sm:text-xs md:text-sm`}>© {year} {siteConfig.couple.bride}. Crafted with love for her debut story.</p>
               <p className={`text-white/90 ${inter.className} text-[10px] sm:text-xs md:text-sm mt-0.5 sm:mt-1`}>
                 Made with love for her special celebration
               </p>

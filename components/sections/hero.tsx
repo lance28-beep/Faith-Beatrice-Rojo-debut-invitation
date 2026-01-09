@@ -6,22 +6,21 @@ import { siteConfig } from "@/content/site"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const desktopImages = [
-  "/desktop-background/debut (16).jpg",
-  "/desktop-background/debut (28).jpg",
-  "/desktop-background/debut 1.jpg",
-  "/desktop-background/debut 2.jpg",
-  "/desktop-background/debut 3.jpg",
+  "/mobile-background/debut (1).jpg",
+  "/mobile-background/debut (2).jpg",
+  "/mobile-background/debut (3).jpg",
+  "/mobile-background/debut (4).jpg",
+  "/mobile-background/debut (5).jpg",
+  "/mobile-background/debut (6).jpg",
 ]
 
 const mobileImages = [
-  "/mobile-background/debut (14).jpg",
-  "/mobile-background/debut (34).jpg",
-  "/mobile-background/debut (20).jpg",
-  "/mobile-background/debut (23).jpg",
-  "/mobile-background/debut (22).jpg",
-  "/mobile-background/debut 1.jpg",
-  "/mobile-background/debut 2.jpg",
-  "/mobile-background/debut 3.jpg",
+  "/mobile-background/debut (1).jpg",
+  "/mobile-background/debut (2).jpg",
+  "/mobile-background/debut (3).jpg",
+  "/mobile-background/debut (4).jpg",
+  "/mobile-background/debut (5).jpg",
+  "/mobile-background/debut (6).jpg",
 ]
 
 const greatVibes = Great_Vibes({
@@ -138,7 +137,7 @@ export function Hero() {
                 textShadow: "0 2px 14px rgba(23, 40, 34, 0.7)",
               }}
             >
-              An Enchanted Evening Awaits You!
+              A Nature's Evening Awaits You!
             </p>
 
             {/* Name - Hero */}
@@ -150,7 +149,7 @@ export function Hero() {
                 filter: "drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 50px rgba(230, 163, 121, 0.6))",
               }}
             >
-              Mikaella Arkean
+              {siteConfig.couple.bride}
             </h1>
 
             {/* Subtitle Text */}
@@ -179,7 +178,7 @@ export function Hero() {
             >
               {/* Month */}
               <span className="text-[0.65rem] sm:text-xs md:text-sm uppercase tracking-[0.4em] sm:tracking-[0.5em] font-light">
-                January
+                February
               </span>
               
               {/* Date Line */}
@@ -188,7 +187,7 @@ export function Hero() {
                 <div className="flex flex-1 items-center justify-end gap-1.5 sm:gap-2.5">
                   <span className="h-[0.5px] flex-1 bg-[#E9D3A4]/50" />
                   <span className="text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light">
-                    Sun
+                    SAT
                   </span>
                   <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#E9D3A4]/50" />
                 </div>
@@ -207,7 +206,7 @@ export function Hero() {
                       filter: "drop-shadow(0 0 30px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 50px rgba(230, 163, 121, 0.6))",
                     }}
                   >
-                    18
+                    21
                   </span>
                 </div>
 
@@ -215,7 +214,7 @@ export function Hero() {
                 <div className="flex flex-1 items-center gap-1.5 sm:gap-2.5">
                   <span className="h-[0.5px] w-6 sm:w-8 md:w-10 bg-[#E9D3A4]/50" />
                   <span className="text-[0.6rem] sm:text-[0.7rem] md:text-xs uppercase tracking-[0.3em] sm:tracking-[0.4em] font-light">
-                    4:00 PM
+                    6:00 PM
                   </span>
                   <span className="h-[0.5px] flex-1 bg-[#E9D3A4]/50" />
                 </div>

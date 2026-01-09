@@ -29,7 +29,7 @@ const playfair = Playfair_Display({
   weight: ["400", "500", "600"],
 })
 
-const celebrantName = "Mikaella Arkean"
+const celebrantName = siteConfig.couple.bride
 
 export function Countdown() {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
@@ -238,7 +238,7 @@ export function Countdown() {
       {/* Header */}
       <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
         <p className="text-xs sm:text-sm md:text-base tracking-[0.45em] uppercase text-[#E9D3A4]/80 mb-3">
-          An Enchanted Countdown for {celebrantName}
+          A Nature's Countdown for {celebrantName}
         </p>
         <h2
           className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] text-white mb-3 sm:mb-4 drop-shadow-[0_18px_40px_rgba(23,40,34,0.65)]`}
@@ -246,7 +246,7 @@ export function Countdown() {
           Countdown to {celebrantName}'s Debut
         </h2>
         <p className="text-sm sm:text-base md:text-lg text-[#E9D3A4]/90 font-light max-w-2xl mx-auto leading-relaxed">
-          Every moment brings us closer to {celebrantName}'s magical entrance into eighteen—an enchanted evening filled with wonder and celebration.
+          Every moment brings us closer to {celebrantName}'s natural entrance into eighteen—a nature's evening filled with wonder and celebration.
         </p>
       </div>
 

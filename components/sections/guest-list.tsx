@@ -16,12 +16,13 @@ import {
   UserPlus,
 } from "lucide-react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600"] })
-const debutanteName = "Mikaella Arkean"
-const debutanteFirstName = debutanteName.split(" ")[0]
+const debutanteName = siteConfig.couple.bride
+const debutanteFirstName = siteConfig.couple.brideNickname
 
 interface Guest {
   Name: string
@@ -269,7 +270,7 @@ export function GuestList() {
           <h2
             className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_40px_rgba(23,40,34,0.68)]`}
           >
-            Join Us in This Enchanted Celebration
+            Join Us in This Nature's Celebration
           </h2>
           <p className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-xl sm:max-w-2xl mx-auto leading-relaxed`}>
             Search your name to confirm your presence at {debutanteName}&apos;s debut. Your RSVP helps us create an evening of magic,
@@ -342,7 +343,7 @@ export function GuestList() {
                       <div className="space-y-1.5 sm:space-y-2">
                         <h4 className={`${playfair.className} text-base sm:text-lg text-white`}>Not seeing your name?</h4>
                         <p className={`${inter.className} text-xs sm:text-sm text-white/85 leading-relaxed`}>
-                          We&apos;d be honored to have you join us. Send a request and we&apos;ll make sure you&apos;re part of {debutanteName}&apos;s enchanted debut celebration.
+                          We&apos;d be honored to have you join us. Send a request and we&apos;ll make sure you&apos;re part of {debutanteName}&apos;s nature's debut celebration.
                         </p>
                       </div>
                       <Button
@@ -376,7 +377,7 @@ export function GuestList() {
                         Welcome, {(selectedGuest?.Name || formData.Name) || "Guest"}
                       </h3>
                       <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-[#E9D3A4]/85 leading-relaxed`}>
-                        We&apos;re delighted to have you join us for {debutanteName}&apos;s enchanted debut celebration. Please confirm your attendance for this special evening.
+                        We&apos;re delighted to have you join us for {debutanteName}&apos;s nature's debut celebration. Please confirm your attendance for this special evening.
                       </p>
                     </div>
                     <button
@@ -398,7 +399,7 @@ export function GuestList() {
                       <div className="space-y-1.5 sm:space-y-2">
                         <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>Your RSVP is Confirmed</h4>
                         <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/80`}>
-                          Thank you for confirming your attendance. We're looking forward to celebrating this enchanted evening with you.
+                          Thank you for confirming your attendance. We're looking forward to celebrating this nature's evening with you.
                         </p>
                       </div>
                       {selectedGuest?.RSVP === "Yes" && (
@@ -563,7 +564,7 @@ export function GuestList() {
                       </div>
                       <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>RSVP Successfully Submitted</h4>
                       <p className={`${inter.className} text-xs sm:text-sm text-[#E9D3A4]/80`}>
-                        Thank you for being part of {debutanteName}&apos;s enchanted debut celebration. This window will close automatically.
+                        Thank you for being part of {debutanteName}&apos;s nature's debut celebration. This window will close automatically.
                       </p>
                     </div>
                   </div>
@@ -598,7 +599,7 @@ export function GuestList() {
                         Join Our Celebration
                       </h3>
                       <p className={`${inter.className} hidden sm:block text-xs sm:text-sm md:text-base text-[#E9D3A4]/85 leading-relaxed`}>
-                        We&apos;d be honored to have you join us for {debutanteName}&apos;s debut. Share your details and we&apos;ll reach out to confirm your place at this enchanted celebration.
+                        We&apos;d be honored to have you join us for {debutanteName}&apos;s debut. Share your details and we&apos;ll reach out to confirm your place at this nature's celebration.
                       </p>
                     </div>
                     <button
@@ -721,7 +722,7 @@ export function GuestList() {
                         </div>
                         <h4 className={`${playfair.className} text-lg sm:text-2xl text-white`}>Request Received</h4>
                         <p className={`${inter.className} text-xs sm:text-sm text-[#E9D3A4]/80`}>
-                          Thank you for your interest in joining us. We'll review your request and reach out to confirm your place at this enchanted celebration.
+                          Thank you for your interest in joining us. We'll review your request and reach out to confirm your place at this nature's celebration.
                         </p>
                       </div>
                     </div>

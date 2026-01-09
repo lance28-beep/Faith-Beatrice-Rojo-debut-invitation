@@ -8,16 +8,16 @@ import { siteConfig } from "@/content/site"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mikaella-debut-invitation.vercel.app/"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
-const eventImagePath = "/decoration/image.png"
+const eventImagePath = "/Details/LinkPreviewnes.jpg"
 const eventImageUrl = `${canonicalUrl}${eventImagePath}`
 const eventTitle = `${siteConfig.couple.bride} | Debut 2026`
-const eventDescription = `An Enchanted Evening Awaits You! Join us in celebrating Mikaella Arkean's 18th Birthday Debut on ${siteConfig.wedding.date} at ${siteConfig.wedding.venue} in Tanay, Rizal. ${siteConfig.wedding.theme} with heartfelt stories, schedules, and RSVP details.`
+const eventDescription = `A Nature's Evening Awaits You! Join us in celebrating ${siteConfig.couple.bride}'s 18th Birthday Debut on ${siteConfig.wedding.date} at ${siteConfig.wedding.venue} in Bacolod. ${siteConfig.wedding.theme} with heartfelt stories, schedules, and RSVP details.`
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Event",
   name: eventTitle,
-  startDate: "2026-01-18T16:00:00+08:00",
-  endDate: "2026-01-18T21:00:00+08:00",
+  startDate: "2026-02-21T18:00:00+08:00",
+  endDate: "2026-02-21T21:00:00+08:00",
   eventStatus: "https://schema.org/EventScheduled",
   eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
   location: [
@@ -27,8 +27,8 @@ const jsonLd = {
       address: {
         "@type": "PostalAddress",
         streetAddress: siteConfig.wedding.address,
-        addressLocality: "Tanay",
-        addressRegion: "Rizal",
+        addressLocality: "Bacolod",
+        addressRegion: "Negros Occidental",
         addressCountry: "PH",
       },
     },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
   title: eventTitle,
   description: eventDescription,
   keywords:
-    "Mikaella Arkean debut, 18th birthday celebration, January 18 2026, Casa Blanca Tanay, Tanay debut, enchanted theme debut, Floresta Encantada, debut invitation website",
+    `${siteConfig.couple.bride} debut, 18th birthday celebration, February 21 2026, Roys Hotel Bacolod, Bacolod debut, nature's theme debut, Floresta Natural, debut invitation website`,
   authors: [{ name: siteConfig.couple.bride }],
   creator: siteConfig.couple.bride,
   publisher: siteConfig.couple.bride,
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     title: eventTitle,
     description: eventDescription,
     url: canonicalUrl,
-    siteName: "Mikaella Arkean Debut 2026",
+    siteName: `${siteConfig.couple.bride} Debut 2026`,
     locale: "en_PH",
     type: "website",
     images: [
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
         url: eventImageUrl,
         width: 1200,
         height: 630,
-        alt: "Invitation cover for Mikaella Arkean B. De Castro's enchanted debut",
+        alt: `Invitation cover for ${siteConfig.couple.bride}'s nature's debut`,
       },
     ],
   },

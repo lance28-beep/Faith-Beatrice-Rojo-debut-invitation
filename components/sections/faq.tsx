@@ -16,17 +16,17 @@ interface FAQItem {
   answer: string
 }
 
-const debutanteFullName = "Mikaella Arkean"
-const debutanteNickname = "Mikaella"
+const debutanteFullName = siteConfig.couple.bride
+const debutanteNickname = siteConfig.couple.brideNickname
 
 const faqItems: FAQItem[] = [
   {
-    question: `What is the dress code for ${debutanteNickname}'s enchanted debut?`,
+    question: `What is the dress code for ${debutanteNickname}'s nature's debut?`,
     answer:
       `Ladies: ${siteConfig.dressCode.guests.ladies}.\n\nGentlemen: ${siteConfig.dressCode.guests.gentlemen}.\n\n${siteConfig.dressCode.note}`,
   },
   {
-    question: "When and where is the enchanted celebration?",
+    question: "When and where is the nature's celebration?",
     answer:
       `${debutanteNickname}'s eighteenth debut is on ${siteConfig.ceremony.day}, ${siteConfig.ceremony.date} at ${siteConfig.ceremony.time} at ${siteConfig.ceremony.venue}. The celebration will take place at ${siteConfig.ceremony.venue}.`,
   },
@@ -38,12 +38,7 @@ const faqItems: FAQItem[] = [
   {
     question: "When is the RSVP deadline?",
     answer:
-      `Kindly RSVP by ${siteConfig.details.rsvp.deadline}. Your response helps us prepare for ${debutanteNickname}'s special enchanted evening. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]`,
-  },
-  {
-    question: "Do you have a gift registry?",
-    answer:
-      `Your presence is the most precious gift for ${debutanteNickname}'s enchanted debut celebration. If you wish to share a token of love, we welcome thoughtful gifts that will help celebrate her special day. Please see the Gift Registry section for suggestions.`,
+      `Kindly RSVP by ${siteConfig.details.rsvp.deadline}. Your response helps us prepare for ${debutanteNickname}'s special nature's evening. [RSVP_LINK]Click here to RSVP[/RSVP_LINK]`,
   },
   {
     question: "Is there parking available at the venue?",
@@ -53,7 +48,7 @@ const faqItems: FAQItem[] = [
   {
     question: "Can I bring additional guests?",
     answer:
-      `We kindly ask that any additional guests be included in your RSVP so we can make proper arrangements. Please update your guest count when you submit your RSVP. Thank you for helping us create a perfect enchanted celebration for ${debutanteNickname}!`,
+      `We kindly ask that any additional guests be included in your RSVP so we can make proper arrangements. Please update your guest count when you submit your RSVP. Thank you for helping us create a perfect nature's celebration for ${debutanteNickname}!`,
   },
   {
     question: "What if I have dietary restrictions or allergies?",
@@ -73,12 +68,12 @@ const faqItems: FAQItem[] = [
   {
     question: "What is the 18 Enchanting Flowers and 18 Treasures ceremony?",
     answer:
-      `During the 18 Enchanting Flowers and 18 Treasures ceremony, ${debutanteNickname} will receive 18 enchanting flowers and 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this enchanted evening.`,
+      `During the 18 Nature's Flowers and 18 Treasures ceremony, ${debutanteNickname} will receive 18 natural flowers and 18 treasures from loved ones. If you're participating, please prepare a short wish or keepsake. This is a beautiful tradition that celebrates her journey to adulthood in this nature's evening.`,
   },
   {
     question: "What time does the celebration end?",
     answer:
-      "The program wraps by 9:00 PM so you can rest and travel home safely. We want everyone to enjoy the enchanted evening while ensuring a safe journey home.",
+      "The program wraps by 9:00 PM so you can rest and travel home safely. We want everyone to enjoy the nature's evening while ensuring a safe journey home.",
   },
   {
     question: "Will there be a program or schedule for the evening?",
@@ -93,7 +88,7 @@ const faqItems: FAQItem[] = [
   {
     question: "What should I bring to the debut?",
     answer:
-      "Just bring yourself and your enchanted presence! If you're participating in the 18 Treasures ceremony, please bring your prepared treasure or wish. Otherwise, your attendance is the greatest gift.",
+      "Just bring yourself and your nature's presence! If you're participating in the 18 Treasures ceremony, please bring your prepared treasure or wish. Otherwise, your attendance is the greatest gift.",
   },
   {
     question: "Is there a specific entrance or registration area?",
@@ -228,7 +223,7 @@ export function FAQ() {
 
       <div className="relative z-10 text-center mb-8 sm:mb-10 md:mb-14 lg:mb-16 px-3 sm:px-4">
         <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
-          For Mikaella Arkean
+          For {siteConfig.couple.bride}
         </div>
         <h2
           className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-4`}
@@ -236,7 +231,7 @@ export function FAQ() {
           Frequently Asked Questions
         </h2>
         <p className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-4 leading-relaxed px-2`}>
-          Everything you need to know about {debutanteFullName}&apos;s enchanted debut celebration
+          Everything you need to know about {debutanteFullName}&apos;s nature's debut celebration
         </p>
       </div>
 

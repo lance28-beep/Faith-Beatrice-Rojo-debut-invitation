@@ -1,6 +1,6 @@
 import { Section } from "@/components/section"
 import { siteConfig } from "@/content/site"
-import { Clock, PartyPopper, MapPin, Navigation, Copy, Check, Palette, Car, Sparkles } from "lucide-react"
+import { Clock, PartyPopper, Navigation, Copy, Check, Palette, Car, Sparkles } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import { Great_Vibes, Inter } from "next/font/google"
@@ -52,9 +52,7 @@ export function Details() {
 
   const schedule = [
     { label: "Ceremony Begins", value: ceremony.time },
-    { label: "Reception Follows", value: reception.time },
     entourageCall && { label: "Entourage Call Time", value: entourageCall },
-    guestsCall && { label: "Guest Doors Open", value: guestsCall },
   ].filter(Boolean) as { label: string; value: string }[]
 
   return (
@@ -169,7 +167,7 @@ export function Details() {
       <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="relative z-10 text-center mb-10 sm:mb-12 md:mb-16 px-4">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-[10px] sm:text-xs tracking-[0.48em] uppercase text-white">
-            For Mikaella Arkean
+            For {siteConfig.couple.bride}
           </div>
           <h2
             className={`${greatVibes.className} text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.65)] mt-4`}
@@ -179,7 +177,7 @@ export function Details() {
           <p
             className={`${inter.className} text-xs sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-4 leading-relaxed`}
           >
-            Step into the enchanted celebration of Mikaella Arkean&apos;s eighteenth chapter. These notes share the call times, venue details, and dress code so you arrive ready for her magical milestone.
+            Step into the nature's celebration of {siteConfig.couple.bride}&apos;s eighteenth chapter. These notes share the call times, venue details, and dress code so you arrive ready for her natural milestone.
           </p>
         </div>
 
@@ -189,21 +187,13 @@ export function Details() {
           <div className="relative overflow-hidden rounded-[28px] sm:rounded-[32px] border border-white/14 bg-white/8 backdrop-blur-2xl shadow-[0_26px_65px_rgba(8,16,34,0.42)]">
             <div className="relative h-[220px] sm:h-60 md:h-80 lg:h-[420px] xl:h-[460px] overflow-hidden">
               <Image
-                src="/Details/location.png"
+                src="/Details/Roys Hotel Bacolod.jpg"
                 alt={venue}
                 fill
                 priority
                 className="object-cover transition-transform duration-[1200ms] group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#172822]/95 via-[#172822]/35 to-transparent" />
-              <div className="absolute inset-x-4 bottom-4 sm:bottom-6 text-white">
-                <h3 className="text-xl sm:text-3xl font-serif font-semibold tracking-wide drop-shadow-lg">
-                  {venue}
-                </h3>
-                <p className="text-[10px] sm:text-[12px] text-white/80 tracking-[0.24em] uppercase">
-                  {ceremony.location}
-                </p>
-              </div>
             </div>
 
             <div className="p-4 sm:p-7 lg:p-8 space-y-4 sm:space-y-6">
@@ -212,7 +202,7 @@ export function Details() {
                   {`${ceremony.day}, ${ceremony.date}`}
                 </div>
                 <p className="text-[10px] sm:text-xs text-[#E9D3A4]/70 tracking-[0.3em] uppercase text-center sm:text-right">
-                  Doors open in the enchanted evening
+                  Doors open in the nature's evening
                 </p>
               </div>
 
@@ -231,14 +221,6 @@ export function Details() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="rounded-2xl border border-white/18 bg-white/10 px-4 py-3.5 flex items-start sm:items-center gap-2.5 sm:gap-3 shadow-[0_12px_30px_rgba(12,20,46,0.25)]">
-                <MapPin className="mt-[2px] sm:mt-0 h-4 w-4 sm:h-5 sm:w-5 text-[#E6A379] flex-shrink-0" />
-                <div className="text-[11px] sm:text-sm text-white/75 leading-relaxed">
-                  <p className="font-semibold text-white">{venue}</p>
-                  <p>{venueAddress}</p>
-                </div>
               </div>
 
               <div className="flex flex-row gap-2.5 sm:gap-3">
@@ -298,7 +280,7 @@ export function Details() {
                 <Palette className="h-6 w-6 text-[#E6A379]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Attire & Palette</p>
-                  <h3 className="text-white text-base sm:text-lg font-semibold">Enchanted Elegance</h3>
+                  <h3 className="text-white text-base sm:text-lg font-semibold">Pastil Spring Party</h3>
                 </div>
               </div>
               <ul className="space-y-2 text-xs sm:text-sm text-white/75 leading-relaxed">
@@ -318,7 +300,7 @@ export function Details() {
                 />
               </div>
               <p className="text-[11px] sm:text-sm text-white/75">
-                Kindly align outfits with the debut palette below for a cohesive, enchanted look.
+                Kindly align outfits with the debut palette below for a cohesive, nature's look.
               </p>
               <div className="flex flex-wrap gap-2.5 sm:gap-3">
                 {colorPalette.map((hex) => (
@@ -332,119 +314,6 @@ export function Details() {
               </div>
             </div>
 
-
-            <div className="rounded-[26px] sm:rounded-[30px] border border-white/18 bg-white/10 backdrop-blur-xl shadow-[0_20px_50px_rgba(8,16,34,0.4)] p-5 sm:p-7 lg:p-8 space-y-4 sm:space-y-5 text-center">
-              <div className="flex items-center justify-center gap-3">
-                <Clock className="h-6 w-6 text-[#E6A379]" />
-                <div>
-                  <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Debut Program</p>
-                  <h3 className="text-white text-base sm:text-lg font-semibold">Evening Flow</h3>
-                </div>
-              </div>
-              <div className="text-[11px] sm:text-sm text-white/80 space-y-1.5">
-                <p className="font-semibold text-white leading-snug">Mikaella Arkean’s 18th Enchanting Debut Programme</p>
-                <p className="leading-snug">January 18, 2026 • 4:00 PM – 9:00 PM</p>
-              </div>
-              <div className="space-y-4 text-[11px] sm:text-sm text-white/85 text-center">
-                <div>
-                  <p className="uppercase tracking-[0.3em] text-white/60 text-[11px] mb-2">Programme Proper 
-                  <br />
-                  (4:00 PM – 6:00 PM)</p>
-                  <div className="space-y-3">
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">4:00 PM – 4:10 PM <br /> Welcome &amp; Invocation</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Arrival &amp; Opening</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Guest arrival &amp; registration</li>
-                          <li className="before:content-['•'] before:mr-2">Opening prayer</li>
-                          <li className="before:content-['•'] before:mr-2">Welcome remarks by the host</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">4:10 PM – 4:25 PM <br /> Grand Entrance of the Debutant</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Spotlight Moment</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Spotlight entrance of Mikaella Arkean</li>
-                          <li className="before:content-['•'] before:mr-2">Special AVP / Tribute Video</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">4:25 PM – 4:45 PM <br /> 18 Enchanting Flowers (Dance Segment)</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Floral Tributes</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Flower Givers &amp; Dances (1–18)</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">4:45 PM – 5:05 PM <br /> 18 Enchanting Treasures (Messages)</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Words from the Heart</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Treasure Messages (1–18)</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">5:05 PM – 5:25 PM <br /> 18 Enchanting Blue Bills (Blessings)</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Gifts &amp; Blessings</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Blue Bill Messages (1–18)</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">5:25 PM – 5:45 PM <br /> 18 Enchanting Drinks (Cheers)</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Toasts &amp; Celebrations</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Toasts &amp; Cheers (1–18)</li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                      <p className="font-semibold text-white mb-1.5 text-[11.5px] sm:text-sm">5:45 PM – 6:00 PM <br /> Gratitude Acknowledgment</p>
-                      <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                        <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Honoring with Thanks</p>
-                        <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                          <li className="before:content-['•'] before:mr-2">Ninang Medz</li>
-                          <li className="before:content-['•'] before:mr-2">Ninang Jules</li>
-                          <li className="before:content-['•'] before:mr-2">Ninang Angge</li>
-                          <li className="before:content-['•'] before:mr-2">Tatay Mhar</li>
-                          <li className="before:content-['•'] before:mr-2">Nanay Leony</li>
-                          <li className="before:content-['•'] before:mr-2">Mommy Sally</li>
-                          <li className="before:content-['•'] before:mr-2">Dada &amp; Mama</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="pt-1">
-                  <p className="uppercase tracking-[0.3em] text-white/60 text-[11px] mb-2">Party Time 
-                  <br />
-                  6:00 PM to 9:00 PM</p>
-                  <div className="rounded-2xl border border-white/18 bg-white/6 px-3.5 py-3 sm:px-4 shadow-[0_10px_26px_rgba(8,16,34,0.32)]">
-                    <div className="grid grid-cols-1 sm:grid-cols-[0.9fr_1.1fr] gap-1.5 sm:gap-2 text-left">
-                      <p className="text-white/70 text-[11px] sm:text-[12px] sm:text-right">Evening Revelry</p>
-                      <ul className="space-y-1 text-white/85 list-none text-[11px] sm:text-[12px]">
-                        <li className="before:content-['•'] before:mr-2">Buffet Dinner</li>
-                        <li className="before:content-['•'] before:mr-2">Live Band</li>
-                        <li className="before:content-['•'] before:mr-2">Open Dance Floor</li>
-                        <li className="before:content-['•'] before:mr-2">Photo Sessions</li>
-                        <li className="before:content-['•'] before:mr-2">Party Games (optional)</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
             <div className="rounded-[26px] sm:rounded-[30px] border border-white/18 bg-white/10 backdrop-blur-xl shadow-[0_20px_50px_rgba(8,16,34,0.4)] p-5 sm:p-7 lg:p-8 space-y-3 sm:space-y-4">
               <div className="flex items-center gap-3">
                 <Car className="h-6 w-6 text-[#E6A379]" />
@@ -454,7 +323,7 @@ export function Details() {
                 </div>
               </div>
               <ul className="space-y-2.5 text-xs sm:text-sm text-white/75 leading-relaxed">
-                <li>Complimentary parking is available at the venue—just mention Mikaella Arkean&apos;s debut at the gate.</li>
+                <li>Complimentary parking is available at the venue—just mention {siteConfig.couple.bride}&apos;s debut at the gate.</li>
                 <li>Need a ride? The venue is accessible via private transport; kindly set drop-off to the venue address.</li>
                 <li>For guests traveling from afar, nearby accommodations are available in the area.</li>
               </ul>

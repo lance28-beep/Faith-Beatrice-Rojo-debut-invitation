@@ -35,7 +35,7 @@ export default async function GalleryPage() {
   const hashtags = [
     "#MikasChapter18",
     `#${sanitizedTagName}Debut2026`,
-    "#EnchantedEvening",
+    "#NaturesEvening",
     "#FlorestaEncantada",
   ]
 
@@ -53,11 +53,11 @@ export default async function GalleryPage() {
 
       <section className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div className="text-center mb-10 sm:mb-12">
-          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#E9D3A4]/75 mb-3">Mikaella Arkean's Enchanted Keepsakes</p>
+          <p className="text-xs sm:text-sm tracking-[0.45em] uppercase text-[#E9D3A4]/75 mb-3">{siteConfig.couple.bride}'s Nature's Keepsakes</p>
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold text-white mb-3 sm:mb-4 drop-shadow-[0_8px_24px_rgba(23,40,34,0.6)]" style={{ fontFamily: 'var(--font-serif)' }}>
-            Mikaella Arkean's Enchanted Gallery
+            {siteConfig.couple.bride}'s Nature's Gallery
           </h1>
-          <p className="mt-3 text-[#E9D3A4]/90 font-sans font-light text-sm sm:text-base md:text-lg leading-relaxed">Moments captured in golden light, warm elegance, and enchanted beauty—every frame tells the story of Mikaella Arkean's magical debut celebration.</p>
+          <p className="mt-3 text-[#E9D3A4]/90 font-sans font-light text-sm sm:text-base md:text-lg leading-relaxed">Moments captured in golden light, warm elegance, and nature's beauty—every frame tells the story of {siteConfig.couple.bride}'s natural debut celebration.</p>
           <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-[#E6A379]/60 to-transparent" />
         </div>
 
@@ -76,7 +76,7 @@ export default async function GalleryPage() {
               Share Your Moments
             </h2>
             <p className="text-[#E9D3A4]/90 font-sans font-light text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed">
-              Share your celebration photos with us and be part of Mikaella Arkean's enchanted debut story
+              Share your celebration photos with us and be part of {siteConfig.couple.bride}'s nature's debut story
             </p>
             <div className="flex flex-wrap items-center justify-center gap-2.5 sm:gap-3 mb-6 sm:mb-8">
               {hashtags.map((tag) => (
@@ -108,7 +108,7 @@ export default async function GalleryPage() {
               </a>
             </div>
             <p className="mt-6 text-[10px] sm:text-xs text-[#E9D3A4]/60 font-sans tracking-[0.2em] uppercase">
-              © 2026 Mikaella Arkean B. De Castro. All rights reserved.
+              © 2026 {siteConfig.couple.bride}. All rights reserved.
             </p>
           </div>
         </div>

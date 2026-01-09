@@ -5,6 +5,7 @@ import { useState, useEffect, useMemo } from "react"
 import { Loader2, Users } from "lucide-react"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
+import { siteConfig } from "@/content/site"
 
 const greatVibes = Great_Vibes({ subsets: ["latin"], weight: "400" })
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["400", "500", "600"] })
@@ -237,17 +238,17 @@ export function Entourage() {
 
       <div className="relative z-10 text-center mb-6 sm:mb-10 md:mb-12 px-3 sm:px-4">
         <div className="inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-white/10 px-3 py-1 text-[9px] sm:text-xs tracking-[0.42em] uppercase text-white">
-          Mikaella Arkean&apos;s Circle
+          {siteConfig.couple.bride}&apos;s Circle
         </div>
         <h2
           className={`${greatVibes.className} text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white drop-shadow-[0_18px_48px_rgba(23,40,34,0.75)] mt-2 sm:mt-4`}
         >
-          Her Enchanted Entourage
+          Her Nature's Entourage
         </h2>
         <p
           className={`${inter.className} text-[11px] sm:text-sm md:text-base text-[#E9D3A4]/90 max-w-2xl mx-auto mt-2 sm:mt-4 leading-relaxed px-2`}
         >
-          Every role blooms around Mikaella Arkean—parents, sponsors, and friends who hold her steady, cheer her on, and illuminate the evening with their love.
+          Every role blooms around {siteConfig.couple.bride}—parents, sponsors, and friends who hold her steady, cheer her on, and illuminate the evening with their love.
         </p>
       </div>
 
