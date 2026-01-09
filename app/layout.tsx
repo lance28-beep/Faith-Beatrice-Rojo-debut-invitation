@@ -8,7 +8,7 @@ import { siteConfig } from "@/content/site"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://faith-beatrice-rojo-debut-invitatio.vercel.app/"
 const canonicalUrl = siteUrl.replace(/\/$/, "")
-const eventImagePath = "/Details/LinkPreviewnes.jpg"
+const eventImagePath = "/decoration/newplaceholder.jpg"
 const eventImageUrl = `${canonicalUrl}${eventImagePath}`
 const eventTitle = `${siteConfig.couple.bride} | Debut 2026`
 const eventDescription = `A Nature's Evening Awaits You! Join us in celebrating ${siteConfig.couple.bride}'s 18th Birthday Debut on ${siteConfig.wedding.date} at ${siteConfig.wedding.venue} in Bacolod. ${siteConfig.wedding.theme} with heartfelt stories, schedules, and RSVP details.`

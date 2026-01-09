@@ -4,14 +4,14 @@ import { Suspense } from "react"
 import dynamic from "next/dynamic"
 import { Hero } from "@/components/sections/hero"
 import { Countdown } from "@/components/sections/countdown"
-import { Narrative } from "@/components/sections/narrative"
+// import { Narrative } from "@/components/sections/narrative"
 import { Gallery } from "@/components/sections/gallery"
 import { Messages } from "@/components/sections/messages"
 import { Details } from "@/components/sections/details"
 import { Entourage } from "@/components/sections/entourage"
 import { PrincipalSponsors } from "@/components/sections/principal-sponsors"
 import { BookOfGuests } from "@/components/sections/book-of-guests"
-import { Registry } from "@/components/sections/registry"
+// import { Registry } from "@/components/sections/registry"
 import { FAQ } from "@/components/sections/faq"
 import { SnapShare } from "@/components/sections/snap-share"
 import { Footer } from "@/components/sections/footer"
@@ -47,7 +47,7 @@ export default function Home() {
         <PrincipalSponsors />
         <GuestList />
         <BookOfGuests />
-        <Registry />
+        {/* <Registry /> */}
         <FAQ />
         <SnapShare />
         <Footer />
