@@ -40,14 +40,21 @@ export function Details() {
   }
 
   const colorPalette = [
-    "#4F5434",
-    "#8C9C6B",
-    "#CEDFBF",
-    "#95B2A0",
-    "#E7CDE8",
-    "#BA94C3",
-    "#9367BE",
-    "#6C407F",
+    "#EDD9DB",
+    "#E874A5",
+    "#F9DB9D",
+    "#F4C3BF",
+    "#AB82D1",
+    "#FEFBF6",
+    "#D3DEF2",
+    "#BCB6DA",
+    "#D77486",
+    "#ADBA9C",
+    "#E09F89",
+    "#F7DFA1",
+    "#C5DBAC",
+    "#FCF4CF",
+    "#B96080",
   ]
 
   const schedule = [
@@ -280,7 +287,7 @@ export function Details() {
                 <Palette className="h-6 w-6 text-[#E6A379]" />
                 <div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.38em] text-white/70">Attire & Palette</p>
-                  <h3 className="text-white text-base sm:text-lg font-semibold">Pastil Spring Party</h3>
+                  <h3 className="text-white text-base sm:text-lg font-semibold">Pastel Spring Party</h3>
                 </div>
               </div>
               <ul className="space-y-2 text-xs sm:text-sm text-white/75 leading-relaxed">
