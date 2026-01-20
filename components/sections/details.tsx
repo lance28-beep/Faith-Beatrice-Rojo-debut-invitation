@@ -55,6 +55,8 @@ export function Details() {
     "#C5DBAC",
     "#FCF4CF",
     "#B96080",
+    "#0B1C3D",
+    "#000000",
   ]
 
   const schedule = [
@@ -299,7 +301,7 @@ export function Details() {
               </ul>
               <div className="relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-[0_8px_24px_rgba(10,16,34,0.4)]">
                 <Image
-                  src="/Details/pastelattire.png"
+                  src="/Details/updateimageguest.png"
                   alt="Attire Color Palette Guide"
                   width={800}
                   height={400}
