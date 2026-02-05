@@ -88,10 +88,8 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
     };
   }, [onComplete]);
 
-  const coupleNames = `${siteConfig.couple.groomNickname} & ${siteConfig.couple.brideNickname}`;
-  const hashtag =
-    siteConfig.snapShare?.hashtag ??
-    `#${siteConfig.couple.groomNickname}And${siteConfig.couple.brideNickname}`;
+  // Show debutant name with event instead of couple names
+  const coupleNames = `${siteConfig.couple.brideNickname} 18th Birthday`;
   const productionCredit = siteConfig.snapShare?.productionCredit ?? '';
 
   // Palette: dark brown, medium brown, tan, light peachy cream, cream
@@ -129,7 +127,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
       </div>
 
       <div className="relative flex flex-col flex-1 min-h-0">
-        {/* Top: Debut label + hashtag + countdown - refined styling, centered on mobile */}
+        {/* Top: Debut label + countdown - refined styling, centered on mobile */}
         <div className="flex flex-col items-center justify-center w-full pt-12 sm:pt-16 md:pt-24 px-4 sm:px-6 flex-shrink-0">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-4 w-full max-w-lg mx-auto">
             <span
@@ -147,15 +145,6 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
               style={{ backgroundColor: palette.tan }}
             />
           </div>
-          <p
-            className="text-xs sm:text-sm tracking-[0.2em] sm:tracking-[0.25em] font-sans mb-8 sm:mb-10 text-center"
-            style={{
-              color: palette.cream,
-              textShadow: `0 1px 2px rgba(0,0,0,0.3)`,
-            }}
-          >
-            {hashtag}
-          </p>
           <h2
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center tracking-[0.08em] sm:tracking-[0.12em] uppercase max-w-md leading-tight px-2"
             style={{
@@ -221,7 +210,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
             className="text-center text-2xl sm:text-3xl md:text-4xl mb-2"
             style={{
               fontFamily: 'var(--font-serif), cursive',
-              color: '#0A3629',
+              color: '#172822',
               textShadow: '0 2px 8px rgba(0,0,0,0.3)',
             }}
           >
@@ -238,7 +227,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
           {/* Preparing message + progress bar */}
           <p
             className="text-xs sm:text-sm tracking-widest mt-6 mb-3 font-sans uppercase"
-            style={{ color: '#0A3629' }}
+            style={{ color: '#172822' }}
           >
             Preparing your debut invitation
           </p>
@@ -251,7 +240,7 @@ export const LoadingScreen: React.FC<LoadingScreenProps> = ({ onComplete }) => {
                 className="h-full rounded-full transition-all duration-300 ease-out"
                 style={{
                   width: `${progress}%`,
-                  backgroundColor: '#0A3629',
+                  backgroundColor: '#172822',
                 }}
               />
             </div>

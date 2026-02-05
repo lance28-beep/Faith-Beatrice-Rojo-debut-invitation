@@ -130,7 +130,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             style={{
               fontFamily: '"Great Vibes", cursive',
               fontWeight: 400,
-              color: '#0A3629',
+              color: '#172822',
               textShadow: '0 2px 8px rgba(10, 54, 41, 0.2)',
             }}
           >
@@ -144,7 +144,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
             style={{
               fontFamily: '"Cinzel", serif',
               fontWeight: 700,
-              color: '#0A3629',
+              color: '#172822',
               textShadow: '0 2px 8px rgba(10, 54, 41, 0.2)',
               letterSpacing: '0.05em',
             }}
@@ -160,8 +160,8 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               contentVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
             style={{
-              backgroundColor: '#0A3629',
-              borderColor: '#0A3629',
+              backgroundColor: '#172822',
+              borderColor: '#172822',
               color: '#FFFFFF',
             }}
             onMouseEnter={(e) => {
@@ -170,9 +170,9 @@ export const Hero: React.FC<HeroProps> = ({ onOpen, visible }) => {
               e.currentTarget.style.borderColor = '#07241a';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = '#0A3629';
+              e.currentTarget.style.backgroundColor = '#172822';
               e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.borderColor = '#0A3629';
+              e.currentTarget.style.borderColor = '#172822';
             }}
           >
             <span
