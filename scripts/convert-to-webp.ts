@@ -2,11 +2,19 @@ import fs from "fs";
 import path from "path";
 import sharp from "sharp";
 
-const IMAGES_DIR = path.resolve(process.cwd(), "public", "Couple_img");
+const VALID_INPUT_EXTENSIONS = new Set([
+  ".jpg",
+  ".jpeg",
+  ".png",
+  ".JPG",
+  ".JPEG",
+  ".PNG",
+]);
 
-const VALID_INPUT_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".JPG", ".JPEG", ".PNG"]);
-
-async function convertImageToWebp(inputPath: string, quality: number = 80): Promise<void> {
+async function convertImageToWebp(
+  inputPath: string,
+  quality: number = 80,
+): Promise<void> {
   const ext = path.extname(inputPath);
   const baseName = path.basename(inputPath, ext);
   const outputPath = path.join(path.dirname(inputPath), `${baseName}.webp`);
@@ -19,24 +27,26 @@ async function convertImageToWebp(inputPath: string, quality: number = 80): Prom
   await image.webp({ quality }).toFile(outputPath);
 }
 
-async function main(): Promise<void> {
-  if (!fs.existsSync(IMAGES_DIR)) {
-    console.error(`Directory not found: ${IMAGES_DIR}`);
-    process.exit(1);
-  }
+async function convertDirectory(dir: string): Promise<void> {
+  const absDir = path.resolve(process.cwd(), dir);
 
-  const entries = fs.readdirSync(IMAGES_DIR);
-
-  const targets = entries
-    .filter((name) => VALID_INPUT_EXTENSIONS.has(path.extname(name)))
-    .map((name) => path.join(IMAGES_DIR, name));
-
-  if (targets.length === 0) {
-    console.log("No JPG/PNG images found to convert.");
+  if (!fs.existsSync(absDir)) {
+    console.error(`Directory not found: ${absDir}`);
     return;
   }
 
-  console.log(`Converting ${targets.length} images in ${IMAGES_DIR} to WebP...`);
+  const entries = fs.readdirSync(absDir);
+
+  const targets = entries
+    .filter((name) => VALID_INPUT_EXTENSIONS.has(path.extname(name)))
+    .map((name) => path.join(absDir, name));
+
+  if (targets.length === 0) {
+    console.log(`No JPG/PNG images found to convert in ${absDir}.`);
+    return;
+  }
+
+  console.log(`Converting ${targets.length} images in ${absDir} to WebP...`);
 
   let converted = 0;
   for (const file of targets) {
@@ -48,12 +58,17 @@ async function main(): Promise<void> {
     }
   }
 
-  console.log(`Done. Converted ${converted}/${targets.length} images.`);
+  console.log(`Done. Converted ${converted}/${targets.length} images in ${absDir}.`);
+}
+
+async function main(): Promise<void> {
+  // Convert both desktop and mobile background images.
+  await convertDirectory("public/desktop-background");
+  await convertDirectory("public/mobile-background");
 }
 
 main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
-
 

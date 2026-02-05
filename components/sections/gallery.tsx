@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Link from "next/link"
 import { Section } from "@/components/section"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
 import { Great_Vibes, Playfair_Display, Inter } from "next/font/google"
@@ -22,12 +23,12 @@ const inter = Inter({
 })
 
 const galleryItems = [
-  { image: "/mobile-background/debut (1).jpg", text: `${siteConfig.couple.brideNickname} • Nature's Moments` },
-  { image: "/mobile-background/debut (2).jpg", text: `${siteConfig.couple.brideNickname} • Garden Elegance` },
-  { image: "/mobile-background/debut (3).jpg", text: `${siteConfig.couple.brideNickname} • Garden Elegance` },
-  { image: "/mobile-background/debut (4).jpg", text: `${siteConfig.couple.brideNickname} • Timeless Beauty` },
-  { image: "/mobile-background/debut (5).jpg", text: `${siteConfig.couple.brideNickname} • Nature's Moments` },
-  { image: "/mobile-background/debut (6).jpg", text: `${siteConfig.couple.brideNickname} • Nature's Moments` },
+  { image: "/mobile-background/debut (1).webp", text: `${siteConfig.couple.brideNickname} • Nature's Moments` },
+  { image: "/mobile-background/debut (2).webp", text: `${siteConfig.couple.brideNickname} • Garden Elegance` },
+  { image: "/mobile-background/debut (3).webp", text: `${siteConfig.couple.brideNickname} • Garden Elegance` },
+  { image: "/mobile-background/debut (4).webp", text: `${siteConfig.couple.brideNickname} • Timeless Beauty` },
+  { image: "/mobile-background/debut (5).webp", text: `${siteConfig.couple.brideNickname} • Nature's Moments` },
+  { image: "/mobile-background/debut (6).webp", text: `${siteConfig.couple.brideNickname} • Nature's Moments` },
 ]
 
 const tileLayouts = [
@@ -159,6 +160,14 @@ export function Gallery() {
                     </div>
                   </div>
                 ))}
+              </div>
+              <div className="mt-8 flex justify-center">
+                <Link
+                  href="/gallery"
+                  className={`${playfair.className} group relative inline-flex items-center justify-center px-8 py-3 rounded-xl border border-[#E6A379]/60 bg-[#172822]/70 text-xs sm:text-sm tracking-[0.3em] uppercase text-[#E9D3A4] shadow-[0_12px_30px_rgba(23,40,34,0.7)] transition-all duration-500 hover:scale-[1.03] hover:-translate-y-1 hover:border-[#E9D3A4] hover:bg-[#172822]/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E6A379]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#172822]`}
+                >
+                  View Full Gallery
+                </Link>
               </div>
             </div>
           )}

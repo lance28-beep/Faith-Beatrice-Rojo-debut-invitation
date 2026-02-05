@@ -6,21 +6,21 @@ import { siteConfig } from "@/content/site"
 import { ButterflyCluster } from "@/components/butterfly-cluster"
 
 const desktopImages = [
-  "/mobile-background/debut (1).jpg",
-  "/mobile-background/debut (2).jpg",
-  "/mobile-background/debut (3).jpg",
-  "/mobile-background/debut (4).jpg",
-  "/mobile-background/debut (5).jpg",
-  "/mobile-background/debut (6).jpg",
+  "/mobile-background/debut (1).webp",
+  "/mobile-background/debut (2).webp",
+  "/mobile-background/debut (3).webp",
+  "/mobile-background/debut (4).webp",
+  "/mobile-background/debut (5).webp",
+  "/mobile-background/debut (6).webp",
 ]
 
 const mobileImages = [
-  "/mobile-background/debut (1).jpg",
-  "/mobile-background/debut (2).jpg",
-  "/mobile-background/debut (3).jpg",
-  "/mobile-background/debut (4).jpg",
-  "/mobile-background/debut (5).jpg",
-  "/mobile-background/debut (6).jpg",
+  "/mobile-background/debut (1).webp",
+  "/mobile-background/debut (2).webp",
+  "/mobile-background/debut (3).webp",
+  "/mobile-background/debut (4).webp",
+  "/mobile-background/debut (5).webp",
+  "/mobile-background/debut (6).webp",
 ]
 
 const greatVibes = Great_Vibes({
