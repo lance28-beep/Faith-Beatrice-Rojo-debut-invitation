@@ -39,7 +39,8 @@ export function Details() {
     window.open(mapsLink, "_blank", "noopener,noreferrer")
   }
 
-  const colorPalette = [
+  // Attire palettes – separated for ladies and gentlemen, with emphasis on soft pastels
+  const ladiesPalette = [
     "#EDD9DB",
     "#E874A5",
     "#F9DB9D",
@@ -55,8 +56,11 @@ export function Details() {
     "#C5DBAC",
     "#FCF4CF",
     "#B96080",
-    "#0B1C3D",
-    "#000000",
+  ]
+
+  const gentlemenPalette = [
+    "#0B1C3D", // navy blue
+    "#000000", // black
   ]
 
   const schedule = [
@@ -294,10 +298,11 @@ export function Details() {
               </div>
               <ul className="space-y-2 text-xs sm:text-sm text-white/75 leading-relaxed">
                 <li>
-                  Ladies: {siteConfig.dressCode.guests.ladies}.
+                  <span className="font-semibold">Ladies:</span> Flowing gowns and shimmering dresses in soft, pastel hues.
                 </li>
-                <li>Gentlemen: {siteConfig.dressCode.guests.gentlemen}.</li>
-                <li className="italic text-white/85">{siteConfig.dressCode.note}</li>
+                <li>
+                  <span className="font-semibold">Gentlemen:</span> Charming suits in classic tones.
+                </li>
               </ul>
               <div className="relative w-full rounded-2xl overflow-hidden border border-white/20 shadow-[0_8px_24px_rgba(10,16,34,0.4)]">
                 <Image
@@ -308,18 +313,49 @@ export function Details() {
                   className="w-full h-auto object-cover"
                 />
               </div>
-              <p className="text-[11px] sm:text-sm text-white/75">
-                Kindly align outfits with the debut palette below for a cohesive, nature's look.
-              </p>
-              <div className="flex flex-wrap gap-2.5 sm:gap-3">
-                {colorPalette.map((hex) => (
-                  <span
-                    key={hex}
-                    className="h-10 w-10 sm:h-11 sm:w-11 rounded-full border border-white/25 shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
-                    style={{ backgroundColor: hex }}
-                    aria-label={`Palette color ${hex}`}
-                  />
-                ))}
+              <div className="space-y-3 sm:space-y-4">
+                <div>
+                  <p className="text-[11px] sm:text-sm font-semibold uppercase tracking-[0.2em] text-white/70">
+                    Attire Color Palette Guide
+                  </p>
+                  <p className="text-[11px] sm:text-sm text-white/75">
+                    Kindly align outfits with the debut palette below for a cohesive, nature&apos;s look.
+                  </p>
+                </div>
+
+                {/* Ladies palette guide */}
+                <div className="space-y-1.5">
+                  <p className="text-[11px] sm:text-sm font-semibold text-white/85">
+                    Ladies: pastel colors
+                  </p>
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {ladiesPalette.map((hex) => (
+                      <span
+                        key={hex}
+                        className="h-9 w-9 sm:h-10 sm:w-10 rounded-full border border-white/25 shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
+                        style={{ backgroundColor: hex }}
+                        aria-label={`Ladies palette color ${hex}`}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                {/* Gentlemen palette guide */}
+                <div className="space-y-1.5">
+                  <p className="text-[11px] sm:text-sm font-semibold text-white/85">
+                    Gentlemen: black and navy blue
+                  </p>
+                  <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                    {gentlemenPalette.map((hex) => (
+                      <span
+                        key={hex}
+                        className="h-9 w-9 sm:h-10 sm:w-10 rounded-full border border-white/25 shadow-[0_6px_16px_rgba(0,0,0,0.35)]"
+                        style={{ backgroundColor: hex }}
+                        aria-label={`Gentlemen palette color ${hex}`}
+                      />
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
 

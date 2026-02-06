@@ -24,6 +24,7 @@ export function BookOfGuests() {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [totalGuests, setTotalGuests] = useState(0)
+  const [showAllGuests, setShowAllGuests] = useState(false)
   const debutanteName = siteConfig.couple.bride
   const debutanteFirstName = siteConfig.couple.brideNickname
 
@@ -276,7 +277,7 @@ export function BookOfGuests() {
               </div>
             ) : (
               <div className="relative z-10 space-y-2 sm:space-y-3.5">
-                {guests.slice(0, 10).map((guest, index) => (
+                {(showAllGuests ? guests : guests.slice(0, 10)).map((guest, index) => (
                   <div
                     key={index}
                     className="group relative overflow-hidden rounded-2xl border border-[#E6A379]/15 bg-white px-3 sm:px-4 md:px-5 py-3 sm:py-4.5 md:py-5 transition-all duration-300 hover:border-[#E6A379]/40 hover:shadow-[0_12px_26px_rgba(23,40,34,0.18)]"
@@ -330,14 +331,15 @@ export function BookOfGuests() {
                     </div>
                   </div>
                 ))}
-                {guests.length > 10 && (
+                {!showAllGuests && guests.length > 10 && (
                   <div className="mt-5 sm:mt-6 flex justify-center">
-                    <a
-                      href="#guest-list"
+                    <button
+                      type="button"
+                      onClick={() => setShowAllGuests(true)}
                       className={`${inter.className} inline-flex items-center justify-center rounded-full border border-[#E6A379]/40 bg-white px-5 sm:px-7 py-2.5 sm:py-3 text-xs sm:text-sm uppercase tracking-[0.28em] text-[#172822] hover:bg-[#E6A379]/10 hover:border-[#E6A379] transition-all duration-200`}
                     >
-                      View More
-                    </a>
+                      View {guests.length - 10} more
+                    </button>
                   </div>
                 )}
               </div>
