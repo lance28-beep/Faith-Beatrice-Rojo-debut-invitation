@@ -97,7 +97,7 @@ export default function Home() {
               <GuestList />
               <BookOfGuests />
               <FAQ />
-              <Registry />
+              {/* <Registry /> */}
               <SnapShare />
               <Footer />
             </div>
