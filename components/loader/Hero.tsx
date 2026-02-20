@@ -9,8 +9,8 @@ interface HeroProps {
 const desktopImages: string[] = [
   '/desktop-background/debut (1).webp',
   '/desktop-background/debut (2).webp',
-  '/desktop-background/debut (3).webp',
-  '/desktop-background/debut (4).webp',
+  '/gallery/debut (1).jpg',
+  '/gallery/debut (2).jpg',
   '/desktop-background/debut (5).webp',
 ];
 

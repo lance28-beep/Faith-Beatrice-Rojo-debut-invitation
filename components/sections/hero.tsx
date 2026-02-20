@@ -8,9 +8,8 @@ import { ButterflyCluster } from "@/components/butterfly-cluster"
 const desktopImages = [
   "/mobile-background/debut (1).webp",
   "/mobile-background/debut (2).webp",
-  "/mobile-background/debut (3).webp",
-  "/mobile-background/debut (4).webp",
-  "/mobile-background/debut (5).webp",
+  "/gallery/debut (1).jpg",
+  "/gallery/debut (2).jpg",
   "/mobile-background/debut (6).webp",
 ]
 

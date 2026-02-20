@@ -22,14 +22,8 @@ async function getImagesFrom(dir: string) {
 }
 
 export default async function GalleryPage() {
-  const [desktop, mobile] = await Promise.all([
-    getImagesFrom("desktop-background"),
-    getImagesFrom("mobile-background"),
-  ])
-  const images = [
-    ...desktop.map((src) => ({ src, category: "desktop" as const })),
-    ...mobile.map((src) => ({ src, category: "mobile" as const })),
-  ]
+  const galleryImages = await getImagesFrom("gallery")
+  const images = galleryImages.map((src) => ({ src, category: "gallery" as const }))
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-[#172822] via-[#3B553C] to-[#172822] relative overflow-hidden">
@@ -55,7 +49,7 @@ export default async function GalleryPage() {
 
         {images.length === 0 ? (
           <div className="text-center text-[#E9D3A4]/80">
-            <p>No images found. Add files to <code className="px-2 py-1 bg-[#172822]/60 rounded border border-[#E6A379]/30 text-[#E9D3A4]/90">public/desktop-background</code> or <code className="px-2 py-1 bg-[#172822]/60 rounded border border-[#E6A379]/30 text-[#E9D3A4]/90">public/mobile-background</code>.</p>
+            <p>No images found. Add files to <code className="px-2 py-1 bg-[#172822]/60 rounded border border-[#E6A379]/30 text-[#E9D3A4]/90">public/gallery</code>.</p>
           </div>
         ) : (
           <MasonryGallery images={images} />
